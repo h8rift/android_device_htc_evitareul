@@ -1,4 +1,4 @@
-Device configuration for the HTC ONEX+ (aka Enrc2b)
+Device configuration for the HTC ONEX+ AT&T (aka Evitareul)
 
 Copyright (C) 2012 Robert Shannon
 
