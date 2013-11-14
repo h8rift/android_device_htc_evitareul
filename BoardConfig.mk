@@ -43,8 +43,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/evitareul/bluetooth/vnd_evitareul.txt
 
 # HTC ril compatability
-BOARD_USE_NEW_LIBRIL_HTC := true
-TARGET_PROVIDES_LIBRIL := device/htc/evitareul/proprietary/lib/libril.so
+#BOARD_USE_NEW_LIBRIL_HTC := true
+#TARGET_PROVIDES_LIBRIL := device/htc/evitareul/proprietary/lib/libril.so
 
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
