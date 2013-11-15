@@ -13,19 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from tegra3-common
+# inherit from tegra3-common
 -include device/htc/tegra3-common/BoardConfigCommon.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := evitareul
-
-#for 4.2.2 camera blob
-COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
-
-# Optimization build flags
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
-
-# WiFi related defines
+# Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
@@ -39,21 +30,9 @@ WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcm4334_apsta.bin"
 WIFI_DRIVER_FW_PATH_P2P     := "/system/etc/firmware/fw_bcm4334_p2p.bin"
 
 # BT
+BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/evitareul/bluetooth/vnd_evitareul.txt
-
-# HTC ril compatability
-#BOARD_USE_NEW_LIBRIL_HTC := true
-#TARGET_PROVIDES_LIBRIL := device/htc/evitareul/proprietary/lib/libril.so
-
-# Audio
-BOARD_USES_GENERIC_AUDIO := false
-
-# USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun0/file"
-BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-BOARD_VOLD_MAX_PARTITIONS := 22
-BOARD_HAS_SDCARD_INTERNAL := true
 
 # Kernel / Ramdisk
 TARGET_PROVIDES_INIT_TARGET_RC := true
@@ -72,9 +51,17 @@ BOARD_KERNEL_PAGESIZE := 2048
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/htc/evitareul
 TARGET_KERNEL_CONFIG := cyanogenmod_evitareul_defconfig
+#TARGET_PREBUILT_KERNEL := device/htc/evitareul/kernel
 
-# Don't build docs
+# dont build docs
 DISABLE_DROIDDOC := true
 
-#TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/enrc2b/recovery/recovery-kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_RECOVERY_FSTAB := device/htc/evitareul/ramdisk/fstab.evitareul
+RECOVERY_FSTAB_VERSION := 2 
+
+# Device specific SELinux policies
+BOARD_SEPOLICY_DIRS += \
+    device/htc/evitareul/selinux
+
+#BOARD_SEPOLICY_UNION +=

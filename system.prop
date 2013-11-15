@@ -1,5 +1,5 @@
 #
-# system.prop for enrc2b
+# system.prop for evitareul
 #
 ro.opengles.version = 131072
 
@@ -26,56 +26,102 @@ ro.media.dec.jpeg.memcap=8000000
 ro.media.enc.jpeg.quality=100
 
 #RIL
-ro.telephony.ril_class=HTCTegra3RIL
-rild.libpath=/system/lib/libhtc_ril.so
-rild.libargs=-e wwan0
-ro.telephony.ril.v3=signalstrength,skipbrokendatacall
-modem.power.device=/sys/class/gpio/gpio32/value,0,1
-ro.ril.devicename=/dev/ttyACM1
-modem.powercontrol=disabled
-ro.ril.ecc.VODA-Africa-South=112,911,999
-ro.ril.ecc.HTC-GCC=999,112,997
-ro.ril.ecc.HTC-WWE=999
-ro.ril.ecc.HTC-Dutch=112
-ro.ril.ecc.HTC-SPA=112, 911
-ro.ril.ecc.HTC-FRA=112,911
-ro.ril.ecc.HTC-ITA=112,911
-ro.ril.ecc.HTC-EastEurope=112
-ro.ril.enable.a52.HTC-ITA=1
-ro.ril.enable.a53.HTC-ITA=1
+ro.ril.oem.ecclist=911
 ro.ril.enable.a52=0
 ro.ril.enable.a53=1
 ro.ril.enable.dtm=0
+ro.ril.gprsclass=10
 ro.ril.hsdpa.category=14
 ro.ril.hsupa.category=6
 ro.ril.hsxpa=4
-ro.ril.fast.dormancy.rule=1
+ro.ril.fast.dormancy.rule=2
+ro.ril.att.feature=1
+ro.ril.radio.svn=3
 ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420,27202
-ro.ril.enable.managed.roaming=1
-ro.ril.enable.sdr=1
-ro.ril.enable.amr.wideband=1
+ro.ril.enable.sdr=0
+ro.ril.enable.gea3=1
+ro.ril.enable.ucsq=2
+ro.ril.set.mtusize=1410
 ro.ril.enable.r8fd=0
 ro.ril.disable.cpc=1
-ro.ril.fd.pre_r8_tout.scr_off=2
-ro.ril.fd.pre_r8_tout.scr_on=3
+ro.ril.ciq=0
+ro.ril.def.agps.mode=1
+ro.da1.enable=true
+ro.watch.appid=com.sdgtl.watch.eveul_45_jb
+ro.ril.enable.pre_r8fd=1
+ro.ril.fd.pre_r8_tout.scr_off=3
+ro.ril.fd.pre_r8_tout.scr_on=0
 ro.ril.fd.r8_tout.scr_off=0
 ro.ril.fd.r8_tout.scr_on=0
-ro.ril.imc.fdn=0
-ro.ril.imc.dtmclass=0
-ro.ril.imc.band=900,1800,1900,850
-ro.ril.imc.uband="UMTS_BAND_I","UMTS_BAND_II","UMTS_BAND_V","UMTS_BAND_VIII"
-ro.ril.imc.darp=1
-ro.ril.imc.enhanced.fdpch=1
-ro.ril.imc.fdpch=1
-ro.ril.imc.edpdch.pw.interpo=1
-ro.ril.imc.hspa.dtx.drx=1
-ro.ril.imc.uea2=0
-ro.ril.imc.uia2=0
-ro.ril.edpcch.pwr.boost=1
-ro.ril.hspa.mac.ehs=1
+ro.ril.ltefgi=1577974912
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+# RilLibPath for Ganlite by William_Lai
+rild.libpath.ganlite=/system/lib/librilswitch.so
+rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
+rilswitch.ganlibpath=/system/lib/libganril.so
+
+rild.libargs=-e wwan0
+ro.sf.lcd_density=320
+ro.hwui.text_cache_width=2048
+ro.hwui.text_cache_height=256
+
+# For workaround for ro.baseband property. QCT use the property same as radio version to determine the architecture.
+# But we hard code to mdm for DLX.
+ro.baseband.arch = mdm
+
+# RIL, for IMC modem feature
 ro.ril.enable.imc.feature=1
-ro.ril.projectname=enrc2b
-ro.ril.stkprof.param=FFFFFFFF7F1D00DFB703021F2200000083000000000040100000000000000000
+
+ro.ril.projectname=evitareul
+
+# RIL, parameters for register BLUE stk feature to modem
+ro.ril.stkprof.param=FFFFFFFF7F0000DF9703021F2200000000000000000040100000000000000000
+
+# RIL: enable snapshot
+persist.radio.snapshot_enabled = 1
+persist.radio.snapshot_timer = 22
+
+# Icera fild
+modem.fild.rootdir=/data/rfs
+modem.fild.blocksize=65528
+modem.fild.baudrate=3500000
+modem.fild.hif=0
+modem.fild.coredump=enabled
+modem.fild.coredumpdir=/data/rfs/data/debug
+modem.power.device=/sys/class/gpio/gpio32/value,0,1
+ro.ril.devicename=/dev/ttyACM1
+modem.powercontrol=disabled
+
+# -----------------------------
+# speaker volume is from 20 to 31
+# this corresponds to -2dB to +8dB
+# -----------------------------
+audio.speaker.voice.0=20
+audio.speaker.voice.1=21
+audio.speaker.voice.2=24
+audio.speaker.voice.3=26
+audio.speaker.voice.4=28
+audio.speaker.voice.5=31
+# -----------------------------
+# earpiece volume is from 20 to 31
+# this corresponds to -2dB to +8dB
+# -----------------------------
+audio.earpiece.voice.0=20
+audio.earpiece.voice.1=21
+audio.earpiece.voice.2=24
+audio.earpiece.voice.3=26
+audio.earpiece.voice.4=28
+audio.earpiece.voice.5=31
+# -----------------------------------
+# headset volume is from 9 to 14
+# this corresponds to -34dB to -19dB
+# ----------------------------------
+audio.headset.voice.0=16
+audio.headset.voice.1=19
+audio.headset.voice.2=22
+audio.headset.voice.3=25
+audio.headset.voice.4=28
+audio.headset.voice.5=31
 
 # Wi-Fi
 wifi.interface=wlan0
