@@ -39,7 +39,7 @@ on fs
     mkdir /rca 0775 radio radio
     mkdir /rfs 0755 radio radio
     mkdir /devlog 0700 root root
-    mount_all /fstab.enrc2b
+    mount_all /fstab.evitareul
     chmod 0660 /rca/calib.nvm
     chmod 0660 /rca
     chmod 0660 /rfs
