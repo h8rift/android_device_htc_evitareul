@@ -28,13 +28,13 @@ PRODUCT_COPY_FILES += \
 
 # Files needed for boot image
 PRODUCT_COPY_FILES := \
-    $(LOCAL_PATH)/ramdisk/init.enrc2b.rc:root/init.evitareul.rc \
+    $(LOCAL_PATH)/ramdisk/init.evitareul.rc:root/init.evitareul.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \
     $(LOCAL_PATH)/ramdisk/init.scripts.sh:root/init.scripts.sh \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
-    $(LOCAL_PATH)/ramdisk/ueventd.enrc2b.rc:root/ueventd.evitareul.rc \
-    $(LOCAL_PATH)/ramdisk/fstab.enrc2b:root/fstab.evitareul
+    $(LOCAL_PATH)/ramdisk/ueventd.evitareul.rc:root/ueventd.evitareul.rc \
+    $(LOCAL_PATH)/ramdisk/fstab.evitareul:root/fstab.evitareul
 
 # Prebuilt Audio/GPS/Camera/Wi-Fi configs
 PRODUCT_COPY_FILES += \
