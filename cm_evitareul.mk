@@ -209,7 +209,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-$(call inherit-product, vendor/htc/enrc2b/enrc2b-vendor.mk)
+$(call inherit-product, vendor/htc/evitareul/evitareul-vendor.mk)
 
 # common tegra3-HOX+ configs
 $(call inherit-product, device/htc/tegra3-common/tegra3.mk)
