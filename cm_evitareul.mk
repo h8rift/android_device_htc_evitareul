@@ -36,7 +36,6 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/ramdisk/ueventd.enrc2b.rc:root/ueventd.evitareul.rc \
     $(LOCAL_PATH)/ramdisk/fstab.enrc2b:root/fstab.evitareul
 
-
 # Prebuilt Audio/GPS/Camera/Wi-Fi configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/dsp/AIC3008_REG_DualMic.csv:system/etc/AIC3008_REG_DualMic.csv \
@@ -198,12 +197,6 @@ PRODUCT_PACKAGES += \
     libaudioutils \
     libinvensense_mpl
 
-# Other apps
-PRODUCT_PACKAGES += \
-    PinyinIME \
-    Torch \
-    CellBroadcastReceiver 
-
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory 
@@ -222,15 +215,6 @@ PRODUCT_PACKAGES += \
     sdcard \
     libmtp
 
-# For bugmailer
-ifneq ($(TARGET_BUILD_VARIANT),user)
-    PRODUCT_PACKAGES += send_bug
-    PRODUCT_COPY_FILES += \
-        system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
-        system/extras/bugmailer/send_bug:system/bin/send_bug    
-endif
-
-
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.com.google.locationfeatures=1 \
         ro.setupwizard.enable_bypass=1 \
@@ -239,10 +223,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
         dalvik.vm.dexopt-flags=m=y \
         persist.sys.usb.config=mtp,adb \
         ro.adb.secure=0
-
-# Cell Broadcasts
-PRODUCT_PROPERTY_OVERRIDES += \
-        ro.cellbroadcast.emergencyids=0-65534 
 
 # Tegra 3 spacific overrides
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -260,8 +240,8 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_LOCALES += en_GB xhdpi
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 $(call inherit-product-exists, vendor/htc/evitareul/evitareul-vendor.mk)
-$(call inherit-product, $(LOCAL_PATH)/phone-xhdpi-1024-dalvik-heap.mk) ## Needs a specific config for the device to boot
 
 # Common tegra3-HOX+ configs
 $(call inherit-product, device/htc/tegra3-common/tegra3.mk)

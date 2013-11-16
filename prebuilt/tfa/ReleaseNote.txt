@@ -1,0 +1,25 @@
+20120715
+Voice_copyplayback_20120715.preset --> using playback preset file.
+
+Date: 2012.06.26_Neo
+===============================================================
+voice.config: Vasco 6/22,2012.06.15__AAC__ENR__Speech_48KHz
+voice.preset: Vasco 6/22,2012.06.15__AAC__ENR__Speech_48KHz
+voice.speaker:Vasco 6/22,2012.06.15__AAC__ENR__Speech_48KHz
+voice.eq:     Vasco 6/22,2012.06.15__AAC__ENR__Speech_48KHz	
+================================================================
+Playback.config: disable Tanalysis,6/26,Ken_Liao
+Playback.preset: 6/26,Ken_Liao
+Playback.speaker:Vasco 6/22,2012.06.11__AAC__ENR__MusicPlayback_48KHz
+Playback.eq:     Vasco 6/22,2012.06.11__AAC__ENR__MusicPlayback_48KHz
+================================================================
+ring.config: same as Playback
+ring.preset: same as Playback
+ring.speaker:same as Playback
+ring.eq:same as Playback
+================================================================
+fm.config: same as Playback
+fm.preset: same as Playback
+fm.speaker:same as Playback
+fm.eq:     same as Playback
+================================================================

@@ -1,0 +1,1638 @@
+w 30 00 00 # Page Select Register
+w 30 7f 00 # Reserved
+w 30 01 01 # Software Reset Register
+w 30 7f 78 # Reserved
+w 30 18 80 # Reserved Register
+w 30 32 88 # Reserved
+w 30 18 80 # Reserved Register
+w 30 7f 64 # Reserved
+w 30 32 a4 # Reserved
+w 30 7f 00 # Reserved
+w 30 3c 00 # DAC Signal Processing Block Control Register
+w 30 7f 64 # Reserved
+w 30 14 80 # ADC Oversampling (AOSR) Register
+w 30 7f 78 # Reserved
+w 30 14 80 # ADC Oversampling (AOSR) Register
+w 30 7f 00 # Reserved
+w 30 3d 00 # ADC Signal Processing Block Control Register
+w 30 7f 28 # Reserved
+w 30 01 04 # Software Reset Register
+w 30 7f 50 # Reserved
+w 30 01 04 # Software Reset Register
+w 30 7f 64 # Reserved
+w 30 30 01 # INT1 Interrupt Control Register
+w 30 31 00 # INT2 Interrupt Control Register
+w 30 7f 78 # Reserved
+w 30 30 01 # INT1 Interrupt Control Register
+w 30 31 80 # INT2 Interrupt Control Register
+w 30 18 80 # Reserved Register
+w 30 00 00 # Page Select Register
+w 30 7f 28 # Reserved
+w 30 00 01 # Page Select Register
+w 30 08 00 # Reserved
+w 30 09 b7 # Output Driver Power Control Register
+w 30 0a 98 # Common Mode Control Register
+w 30 0b 00 # Over Current Protection Configuration Register
+w 30 0c 7e # HPL Routing Selection Register
+w 30 0d 90 # HPR Routing Selection Register
+w 30 0e d0 # LOL Routing Selection Register
+w 30 0f 00 # LOR Routing Selection Register
+w 30 10 7b # HPL Driver Gain Setting Register
+w 30 11 28 # HPR Driver Gain Setting Register
+w 30 12 fc # LOL Driver Gain Setting Register
+w 30 13 00 # LOR Driver Gain Setting Register
+w 30 14 84 # Headphone Driver Startup Control Register
+w 30 15 d7 # Reserved Register
+w 30 16 04 # IN1L to HPL Volume Control Register
+w 30 17 00 # IN1R to HPR Volume Control Register
+w 30 18 76 # MAL Volume Control Register
+w 30 19 52 # MAR Volume Control Register
+w 30 1a 00 # Reserved
+w 30 1b 00 # Reserved
+w 30 1c 7d # Reserved
+w 30 1d a6 # Reserved
+w 30 1e e2 # Reserved
+w 30 1f 00 # Reserved
+w 30 20 82 # Reserved
+w 30 21 59 # Reserved
+w 30 22 1e # Reserved
+w 30 23 00 # Reserved
+w 30 24 7d # Reserved
+w 30 25 a6 # Reserved
+w 30 26 e2 # Reserved
+w 30 27 00 # Reserved
+w 30 28 7d # Reserved
+w 30 29 a1 # Reserved
+w 30 2a 5f # Reserved
+w 30 2b 00 # Reserved
+w 30 2c 84 # Reserved
+w 30 2d a7 # Reserved
+w 30 2e 34 # Reserved
+w 30 2f 00 # Reserved
+w 30 30 35 # Reserved
+w 30 31 85 # Reserved
+w 30 32 8e # Reserved
+w 30 33 00 # MICBIAS Configuration Register
+w 30 34 35 # Left MICPGA Positive Terminal Input Routing Configuration Register
+w 30 35 85 # Reserved Register
+w 30 36 8e # Left MICPGA Negative Terminal Input Routing Configuration Register
+w 30 37 00 # Right MICPGA Positive Terminal Input Routing Configuration Register
+w 30 38 35 # Reserved Register
+w 30 39 85 # Right MICPGA Negative Terminal Input Routing Configuration Register
+w 30 3a 8e # Floating Input Configuration Register
+w 30 3b 00 # Left MICPGA Volume Control Register
+w 30 3c e2 # Right MICPGA Volume Control Register
+w 30 3d 5f # ADC Power Tune Configuration Register
+w 30 3e ae # ADC Analog Volume Control Flag Register
+w 30 3f 00 # DAC Analog Gain Control Flag Register
+w 30 40 e5 # Reserved
+w 30 41 2a # Reserved
+w 30 42 6a # Reserved
+w 30 43 00 # Reserved
+w 30 44 ff # Reserved
+w 30 45 ff # Reserved
+w 30 46 ff # Reserved
+w 30 47 00 # Analog Input Quick Charging Configuration Register
+w 30 48 80 # Reserved
+w 30 49 00 # Reserved
+w 30 4a 00 # Reserved
+w 30 4b 00 # Reserved
+w 30 4c 7f # Reserved
+w 30 4d ff # Reserved
+w 30 4e ff # Reserved
+w 30 4f 00 # Reserved
+w 30 50 40 # Reserved
+w 30 51 00 # Reserved
+w 30 52 00 # Reserved
+w 30 53 00 # Reserved
+w 30 54 00 # Reserved
+w 30 55 00 # Reserved
+w 30 56 00 # Reserved
+w 30 57 00 # Reserved
+w 30 58 ff # Reserved
+w 30 59 9e # Reserved
+w 30 5a 00 # Reserved
+w 30 5b 00 # Reserved
+w 30 5c f7 # Reserved
+w 30 5d 10 # Reserved
+w 30 5e 00 # Reserved
+w 30 5f 00 # Reserved
+w 30 60 26 # Reserved
+w 30 61 f0 # Reserved
+w 30 62 00 # Reserved
+w 30 63 00 # Reserved
+w 30 64 02 # Reserved
+w 30 65 61 # Reserved
+w 30 66 00 # Reserved
+w 30 67 00 # Reserved
+w 30 68 40 # Reserved
+w 30 69 02 # Reserved
+w 30 6a 00 # Reserved
+w 30 6b 00 # Reserved
+w 30 6c ff # Reserved
+w 30 6d fc # Reserved
+w 30 6e 00 # Reserved
+w 30 6f 00 # Reserved
+w 30 70 ff # Reserved
+w 30 71 fd # Reserved
+w 30 72 00 # Reserved
+w 30 73 00 # Reserved
+w 30 74 ff # Reserved
+w 30 75 e5 # Reserved
+w 30 76 00 # Reserved
+w 30 77 00 # Reserved
+w 30 78 ff # Reserved
+w 30 79 a7 # Reserved
+w 30 7a 00 # Reserved
+w 30 7b 00 # Reference Power-up Configuration Register
+w 30 7c ff # Reserved
+w 30 7d c7 # Reserved
+w 30 7e 00 # Reserved
+w 30 7f 00 # Reserved
+w 30 00 02 # Writing to Reserved Page2
+w 30 08 ff # Writing to Reserved Page2
+w 30 09 ce # Writing to Reserved Page2
+w 30 0a 00 # Writing to Reserved Page2
+w 30 0b 00 # Writing to Reserved Page2
+w 30 0c ff # Writing to Reserved Page2
+w 30 0d fe # Writing to Reserved Page2
+w 30 0e 00 # Writing to Reserved Page2
+w 30 0f 00 # Writing to Reserved Page2
+w 30 10 fe # Writing to Reserved Page2
+w 30 11 f7 # Writing to Reserved Page2
+w 30 12 00 # Writing to Reserved Page2
+w 30 13 00 # Writing to Reserved Page2
+w 30 14 ff # Writing to Reserved Page2
+w 30 15 46 # Writing to Reserved Page2
+w 30 16 00 # Writing to Reserved Page2
+w 30 17 00 # Writing to Reserved Page2
+w 30 18 ff # Writing to Reserved Page2
+w 30 19 22 # Writing to Reserved Page2
+w 30 1a 00 # Writing to Reserved Page2
+w 30 1b 00 # Writing to Reserved Page2
+w 30 1c ff # Writing to Reserved Page2
+w 30 1d 0f # Writing to Reserved Page2
+w 30 1e 00 # Writing to Reserved Page2
+w 30 1f 00 # Writing to Reserved Page2
+w 30 20 fa # Writing to Reserved Page2
+w 30 21 8c # Writing to Reserved Page2
+w 30 22 00 # Writing to Reserved Page2
+w 30 23 00 # Writing to Reserved Page2
+w 30 24 f5 # Writing to Reserved Page2
+w 30 25 08 # Writing to Reserved Page2
+w 30 26 00 # Writing to Reserved Page2
+w 30 27 00 # Writing to Reserved Page2
+w 30 28 fd # Writing to Reserved Page2
+w 30 29 92 # Writing to Reserved Page2
+w 30 2a 00 # Writing to Reserved Page2
+w 30 2b 00 # Writing to Reserved Page2
+w 30 2c f3 # Writing to Reserved Page2
+w 30 2d a3 # Writing to Reserved Page2
+w 30 2e 00 # Writing to Reserved Page2
+w 30 2f 00 # Writing to Reserved Page2
+w 30 30 03 # Writing to Reserved Page2
+w 30 31 b3 # Writing to Reserved Page2
+w 30 32 00 # Writing to Reserved Page2
+w 30 33 00 # Writing to Reserved Page2
+w 30 34 00 # Writing to Reserved Page2
+w 30 35 33 # Writing to Reserved Page2
+w 30 36 00 # Writing to Reserved Page2
+w 30 37 00 # Writing to Reserved Page2
+w 30 38 00 # Writing to Reserved Page2
+w 30 39 71 # Writing to Reserved Page2
+w 30 3a 00 # Writing to Reserved Page2
+w 30 3b 00 # Writing to Reserved Page2
+w 30 3c 40 # Writing to Reserved Page2
+w 30 3d 60 # Writing to Reserved Page2
+w 30 3e 00 # Writing to Reserved Page2
+w 30 3f 00 # Writing to Reserved Page2
+w 30 40 00 # Writing to Reserved Page2
+w 30 41 e2 # Writing to Reserved Page2
+w 30 42 00 # Writing to Reserved Page2
+w 30 43 00 # Writing to Reserved Page2
+w 30 44 00 # Writing to Reserved Page2
+w 30 45 c6 # Writing to Reserved Page2
+w 30 46 00 # Writing to Reserved Page2
+w 30 47 00 # Writing to Reserved Page2
+w 30 48 00 # Writing to Reserved Page2
+w 30 49 87 # Writing to Reserved Page2
+w 30 4a 00 # Writing to Reserved Page2
+w 30 4b 00 # Writing to Reserved Page2
+w 30 4c 00 # Writing to Reserved Page2
+w 30 4d 0f # Writing to Reserved Page2
+w 30 4e 00 # Writing to Reserved Page2
+w 30 4f 00 # Writing to Reserved Page2
+w 30 50 00 # Writing to Reserved Page2
+w 30 51 0a # Writing to Reserved Page2
+w 30 52 00 # Writing to Reserved Page2
+w 30 53 00 # Writing to Reserved Page2
+w 30 54 00 # Writing to Reserved Page2
+w 30 55 02 # Writing to Reserved Page2
+w 30 56 00 # Writing to Reserved Page2
+w 30 57 00 # Writing to Reserved Page2
+w 30 58 01 # Writing to Reserved Page2
+w 30 59 81 # Writing to Reserved Page2
+w 30 5a 00 # Writing to Reserved Page2
+w 30 5b 00 # Writing to Reserved Page2
+w 30 5c 18 # Writing to Reserved Page2
+w 30 5d 89 # Writing to Reserved Page2
+w 30 5e 00 # Writing to Reserved Page2
+w 30 5f 00 # Writing to Reserved Page2
+w 30 60 07 # Writing to Reserved Page2
+w 30 61 fb # Writing to Reserved Page2
+w 30 62 00 # Writing to Reserved Page2
+w 30 63 00 # Writing to Reserved Page2
+w 30 64 03 # Writing to Reserved Page2
+w 30 65 be # Writing to Reserved Page2
+w 30 66 00 # Writing to Reserved Page2
+w 30 67 00 # Writing to Reserved Page2
+w 30 00 09 # Page Select Register
+w 30 48 00 # C46 (23:16) ADC Buffer A
+w 30 49 b7 # C46 (15:8) ADC Buffer A
+w 30 4a 98 # C46 (7:0) ADC Buffer A
+w 30 4b 00 # C46 Reserved
+w 30 4c 7e # C47 (23:16) ADC Buffer A
+w 30 4d 90 # C47 (15:8) ADC Buffer A
+w 30 4e d0 # C47 (7:0) ADC Buffer A
+w 30 4f 00 # C47 Reserved
+w 30 50 7b # C48 (23:16) ADC Buffer A
+w 30 51 28 # C48 (15:8) ADC Buffer A
+w 30 52 fc # C48 (7:0) ADC Buffer A
+w 30 53 00 # C48 Reserved
+w 30 54 84 # C49 (23:16) ADC Buffer A
+w 30 55 d7 # C49 (15:8) ADC Buffer A
+w 30 56 04 # C49 (7:0) ADC Buffer A
+w 30 57 00 # C49 Reserved
+w 30 58 76 # C50 (23:16) ADC Buffer A
+w 30 59 52 # C50 (15:8) ADC Buffer A
+w 30 5a 00 # C50 (7:0) ADC Buffer A
+w 30 5b 00 # C50 Reserved
+w 30 5c 7d # C51 (23:16) ADC Buffer A
+w 30 5d a6 # C51 (15:8) ADC Buffer A
+w 30 5e e2 # C51 (7:0) ADC Buffer A
+w 30 5f 00 # C51 Reserved
+w 30 60 82 # C52 (23:16) ADC Buffer A
+w 30 61 59 # C52 (15:8) ADC Buffer A
+w 30 62 1e # C52 (7:0) ADC Buffer A
+w 30 63 00 # C52 Reserved
+w 30 64 7d # C53 (23:16) ADC Buffer A
+w 30 65 a6 # C53 (15:8) ADC Buffer A
+w 30 66 e2 # C53 (7:0) ADC Buffer A
+w 30 67 00 # C53 Reserved
+w 30 68 7d # C54 (23:16) ADC Buffer A
+w 30 69 a1 # C54 (15:8) ADC Buffer A
+w 30 6a 5f # C54 (7:0) ADC Buffer A
+w 30 6b 00 # C54 Reserved
+w 30 6c 84 # C55 (23:16) ADC Buffer A
+w 30 6d a7 # C55 (15:8) ADC Buffer A
+w 30 6e 34 # C55 (7:0) ADC Buffer A
+w 30 6f 00 # C55 Reserved
+w 30 70 35 # C56 (23:16) ADC Buffer A
+w 30 71 85 # C56 (15:8) ADC Buffer A
+w 30 72 8e # C56 (7:0) ADC Buffer A
+w 30 73 00 # C56 Reserved
+w 30 74 35 # C57 (23:16) ADC Buffer A
+w 30 75 85 # C57 (15:8) ADC Buffer A
+w 30 76 8e # C57 (7:0) ADC Buffer A
+w 30 77 00 # C57 Reserved
+w 30 78 35 # C58 (23:16) ADC Buffer A
+w 30 79 85 # C58 (15:8) ADC Buffer A
+w 30 7a 8e # C58 (7:0) ADC Buffer A
+w 30 7b 00 # C58 Reserved
+w 30 7c e2 # C59 (23:16) ADC Buffer A
+w 30 7d 5f # C59 (15:8) ADC Buffer A
+w 30 7e ae # C59 (7:0) ADC Buffer A
+w 30 7f 00 # C59 Reserved
+w 30 00 0a # Page Select Register
+w 30 08 e5 # C60 (23:16) ADC Buffer A
+w 30 09 2a # C60 (15:8) ADC Buffer A
+w 30 0a 6a # C60 (7:0) ADC Buffer A
+w 30 0b 00 # C60 Reserved
+w 30 0c ff # C61 (23:16) ADC Buffer A
+w 30 0d ff # C61 (15:8) ADC Buffer A
+w 30 0e ff # C61 (7:0) ADC Buffer A
+w 30 0f 00 # C61 Reserved
+w 30 10 80 # C62 (23:16) ADC Buffer A
+w 30 11 00 # C62 (15:8) ADC Buffer A
+w 30 12 00 # C62 (7:0) ADC Buffer A
+w 30 13 00 # C62 Reserved
+w 30 14 7f # C63 (23:16) ADC Buffer A
+w 30 15 ff # C63 (15:8) ADC Buffer A
+w 30 16 ff # C63 (7:0) ADC Buffer A
+w 30 17 00 # C63 Reserved
+w 30 18 40 # Reserved
+w 30 19 00 # Reserved
+w 30 1a 00 # Reserved
+w 30 1b 00 # Reserved
+w 30 1c 00 # C65 (23:16) ADC Buffer A
+w 30 1d 00 # C65 (15:8) ADC Buffer A
+w 30 1e 00 # C65 (7:0) ADC Buffer A
+w 30 1f 00 # C65 Reserved
+w 30 20 ff # C66 (23:16) ADC Buffer A
+w 30 21 9e # C66 (15:8) ADC Buffer A
+w 30 22 00 # C66 (7:0) ADC Buffer A
+w 30 23 00 # C66 Reserved
+w 30 24 f7 # C67 (23:16) ADC Buffer A
+w 30 25 10 # C67 (15:8) ADC Buffer A
+w 30 26 00 # C67 (7:0) ADC Buffer A
+w 30 27 00 # C67 Reserved
+w 30 28 26 # C68 (23:16) ADC Buffer A
+w 30 29 f0 # C68 (15:8) ADC Buffer A
+w 30 2a 00 # C68 (7:0) ADC Buffer A
+w 30 2b 00 # C68 Reserved
+w 30 2c 02 # C69 (23:16) ADC Buffer A
+w 30 2d 61 # C69 (15:8) ADC Buffer A
+w 30 2e 00 # C69 (7:0) ADC Buffer A
+w 30 2f 00 # C69 Reserved
+w 30 30 40 # C70 (23:16) ADC Buffer A
+w 30 31 02 # C70 (15:8) ADC Buffer A
+w 30 32 00 # C70 (7:0) ADC Buffer A
+w 30 33 00 # C70 Reserved
+w 30 34 ff # C71 (23:16) ADC Buffer A
+w 30 35 fc # C71 (15:8) ADC Buffer A
+w 30 36 00 # C71 (7:0) ADC Buffer A
+w 30 37 00 # C71 Reserved
+w 30 38 ff # C72 (23:16) ADC Buffer A
+w 30 39 fd # C72 (15:8) ADC Buffer A
+w 30 3a 00 # C72 (7:0) ADC Buffer A
+w 30 3b 00 # C72 Reserved
+w 30 3c ff # C73 (23:16) ADC Buffer A
+w 30 3d e5 # C73 (15:8) ADC Buffer A
+w 30 3e 00 # C73 (7:0) ADC Buffer A
+w 30 3f 00 # C73 Reserved
+w 30 40 ff # C74 (23:16) ADC Buffer A
+w 30 41 a7 # C74 (15:8) ADC Buffer A
+w 30 42 00 # C74 (7:0) ADC Buffer A
+w 30 43 00 # C74 Reserved
+w 30 44 ff # C75 (23:16) ADC Buffer A
+w 30 45 c7 # C75 (15:8) ADC Buffer A
+w 30 46 00 # C75 (7:0) ADC Buffer A
+w 30 47 00 # C75 Reserved
+w 30 48 ff # C76 (23:16) ADC Buffer A
+w 30 49 ce # C76 (15:8) ADC Buffer A
+w 30 4a 00 # C76 (7:0) ADC Buffer A
+w 30 4b 00 # C76 Reserved
+w 30 4c ff # C77 (23:16) ADC Buffer A
+w 30 4d fe # C77 (15:8) ADC Buffer A
+w 30 4e 00 # C77 (7:0) ADC Buffer A
+w 30 4f 00 # C77 Reserved
+w 30 50 fe # C78 (23:16) ADC Buffer A
+w 30 51 f7 # C78 (15:8) ADC Buffer A
+w 30 52 00 # C78 (7:0) ADC Buffer A
+w 30 53 00 # C78 Reserved
+w 30 54 ff # C79 (23:16) ADC Buffer A
+w 30 55 46 # C79 (15:8) ADC Buffer A
+w 30 56 00 # C79 (7:0) ADC Buffer A
+w 30 57 00 # C79 Reserved
+w 30 58 ff # C80 (23:16) ADC Buffer A
+w 30 59 22 # C80 (15:8) ADC Buffer A
+w 30 5a 00 # C80 (7:0) ADC Buffer A
+w 30 5b 00 # C80 Reserved
+w 30 5c ff # C81 (23:16) ADC Buffer A
+w 30 5d 0f # C81 (15:8) ADC Buffer A
+w 30 5e 00 # C81 (7:0) ADC Buffer A
+w 30 5f 00 # C81 Reserved
+w 30 60 fa # C82 (23:16) ADC Buffer A
+w 30 61 8c # C82 (15:8) ADC Buffer A
+w 30 62 00 # C82 (7:0) ADC Buffer A
+w 30 63 00 # C82 Reserved
+w 30 64 f5 # C83 (23:16) ADC Buffer A
+w 30 65 08 # C83 (15:8) ADC Buffer A
+w 30 66 00 # C83 (7:0) ADC Buffer A
+w 30 67 00 # C83 Reserved
+w 30 68 fd # C84 (23:16) ADC Buffer A
+w 30 69 92 # C84 (15:8) ADC Buffer A
+w 30 6a 00 # C84 (7:0) ADC Buffer A
+w 30 6b 00 # C84 Reserved
+w 30 6c f3 # C85 (23:16) ADC Buffer A
+w 30 6d a3 # C85 (15:8) ADC Buffer A
+w 30 6e 00 # C85 (7:0) ADC Buffer A
+w 30 6f 00 # C85 Reserved
+w 30 70 03 # C86 (23:16) ADC Buffer A
+w 30 71 b3 # C86 (15:8) ADC Buffer A
+w 30 72 00 # C86 (7:0) ADC Buffer A
+w 30 73 00 # C86 Reserved
+w 30 74 00 # C87 (23:16) ADC Buffer A
+w 30 75 33 # C87 (15:8) ADC Buffer A
+w 30 76 00 # C87 (7:0) ADC Buffer A
+w 30 77 00 # C87 Reserved
+w 30 78 00 # C88 (23:16) ADC Buffer A
+w 30 79 71 # C88 (15:8) ADC Buffer A
+w 30 7a 00 # C88 (7:0) ADC Buffer A
+w 30 7b 00 # C88 Reserved
+w 30 7c 40 # C89 (23:16) ADC Buffer A
+w 30 7d 60 # C89 (15:8) ADC Buffer A
+w 30 7e 00 # C89 (7:0) ADC Buffer A
+w 30 7f 00 # C89 Reserved
+w 30 00 0b # Page Select Register
+w 30 08 00 # C90 (23:16) ADC Buffer A
+w 30 09 e2 # C90 (15:8) ADC Buffer A
+w 30 0a 00 # C90 (7:0) ADC Buffer A
+w 30 0b 00 # C90 Reserved
+w 30 0c 00 # C91 (23:16) ADC Buffer A
+w 30 0d c6 # C91 (15:8) ADC Buffer A
+w 30 0e 00 # C91 (7:0) ADC Buffer A
+w 30 0f 00 # C91 Reserved
+w 30 10 00 # C92 (23:16) ADC Buffer A
+w 30 11 87 # C92 (15:8) ADC Buffer A
+w 30 12 00 # C92 (7:0) ADC Buffer A
+w 30 13 00 # C92 Reserved
+w 30 14 00 # C93 (23:16) ADC Buffer A
+w 30 15 0f # C93 (15:8) ADC Buffer A
+w 30 16 00 # C93 (7:0) ADC Buffer A
+w 30 17 00 # C93 Reserved
+w 30 18 00 # C94 (23:16) ADC Buffer A
+w 30 19 0a # C94 (15:8) ADC Buffer A
+w 30 1a 00 # C94 (7:0) ADC Buffer A
+w 30 1b 00 # C94 Reserved
+w 30 1c 00 # C95 (23:16) ADC Buffer A
+w 30 1d 02 # C95 (15:8) ADC Buffer A
+w 30 1e 00 # C95 (7:0) ADC Buffer A
+w 30 1f 00 # C95 Reserved
+w 30 20 01 # C96 (23:16) ADC Buffer A
+w 30 21 81 # C96 (15:8) ADC Buffer A
+w 30 22 00 # C96 (7:0) ADC Buffer A
+w 30 23 00 # C96 Reserved
+w 30 24 18 # C97 (23:16) ADC Buffer A
+w 30 25 89 # C97 (15:8) ADC Buffer A
+w 30 26 00 # C97 (7:0) ADC Buffer A
+w 30 27 00 # C97 Reserved
+w 30 28 07 # C98 (23:16) ADC Buffer A
+w 30 29 fb # C98 (15:8) ADC Buffer A
+w 30 2a 00 # C98 (7:0) ADC Buffer A
+w 30 2b 00 # C98 Reserved
+w 30 2c 03 # C99 (23:16) ADC Buffer A
+w 30 2d be # C99 (15:8) ADC Buffer A
+w 30 2e 00 # C99 (7:0) ADC Buffer A
+w 30 2f 00 # C99 Reserved
+w 30 00 00 # Page Select Register
+w 30 7f 14 # Reserved
+w 30 00 01 # Page Select Register
+w 30 08 c0 # Reserved
+w 30 09 00 # Output Driver Power Control Register
+w 30 0a 00 # Common Mode Control Register
+w 30 0b 00 # Over Current Protection Configuration Register
+w 30 0c c0 # HPL Routing Selection Register
+w 30 0d 00 # HPR Routing Selection Register
+w 30 0e 00 # LOL Routing Selection Register
+w 30 0f 00 # LOR Routing Selection Register
+w 30 00 00 # Page Select Register
+w 30 7f 64 # Reserved
+w 30 00 01 # Page Select Register
+w 30 08 05 # Reserved
+w 30 09 00 # Output Driver Power Control Register
+w 30 0a 00 # Common Mode Control Register
+w 30 0b 00 # Over Current Protection Configuration Register
+w 30 0c 00 # HPL Routing Selection Register
+w 30 0d 00 # HPR Routing Selection Register
+w 30 0e 00 # LOL Routing Selection Register
+w 30 0f 00 # LOR Routing Selection Register
+w 30 10 48 # HPL Driver Gain Setting Register
+w 30 11 02 # HPR Driver Gain Setting Register
+w 30 12 20 # LOL Driver Gain Setting Register
+w 30 13 00 # LOR Driver Gain Setting Register
+w 30 14 48 # Headphone Driver Startup Control Register
+w 30 15 02 # Reserved Register
+w 30 16 00 # IN1L to HPL Volume Control Register
+w 30 17 00 # IN1R to HPR Volume Control Register
+w 30 18 58 # MAL Volume Control Register
+w 30 19 60 # MAR Volume Control Register
+w 30 1a 08 # Reserved
+w 30 1b 00 # Reserved
+w 30 1c 60 # Reserved
+w 30 1d 60 # Reserved
+w 30 1e 00 # Reserved
+w 30 1f 00 # Reserved
+w 30 20 00 # Reserved
+w 30 21 00 # Reserved
+w 30 22 00 # Reserved
+w 30 23 00 # Reserved
+w 30 24 00 # Reserved
+w 30 25 00 # Reserved
+w 30 26 00 # Reserved
+w 30 27 00 # Reserved
+w 30 28 44 # Reserved
+w 30 29 00 # Reserved
+w 30 2a c0 # Reserved
+w 30 2b 03 # Reserved
+w 30 2c 00 # Reserved
+w 30 2d 00 # Reserved
+w 30 2e 00 # Reserved
+w 30 2f 00 # Reserved
+w 30 30 00 # Reserved
+w 30 31 00 # Reserved
+w 30 32 00 # Reserved
+w 30 33 00 # MICBIAS Configuration Register
+w 30 34 44 # Left MICPGA Positive Terminal Input Routing Configuration Register
+w 30 35 00 # Reserved Register
+w 30 36 00 # Left MICPGA Negative Terminal Input Routing Configuration Register
+w 30 37 03 # Right MICPGA Positive Terminal Input Routing Configuration Register
+w 30 38 21 # Reserved Register
+w 30 39 00 # Right MICPGA Negative Terminal Input Routing Configuration Register
+w 30 3a 00 # Floating Input Configuration Register
+w 30 3b 00 # Left MICPGA Volume Control Register
+w 30 3c 03 # Right MICPGA Volume Control Register
+w 30 3d 80 # ADC Power Tune Configuration Register
+w 30 3e 00 # ADC Analog Volume Control Flag Register
+w 30 3f 20 # DAC Analog Gain Control Flag Register
+w 30 40 00 # Reserved
+w 30 41 00 # Reserved
+w 30 42 00 # Reserved
+w 30 43 00 # Reserved
+w 30 44 45 # Reserved
+w 30 45 02 # Reserved
+w 30 46 a0 # Reserved
+w 30 47 00 # Analog Input Quick Charging Configuration Register
+w 30 48 48 # Reserved
+w 30 49 05 # Reserved
+w 30 4a 00 # Reserved
+w 30 4b 00 # Reserved
+w 30 4c 00 # Reserved
+w 30 4d 00 # Reserved
+w 30 4e 00 # Reserved
+w 30 4f 00 # Reserved
+w 30 50 01 # Reserved
+w 30 51 00 # Reserved
+w 30 52 a0 # Reserved
+w 30 53 10 # Reserved
+w 30 54 00 # Reserved
+w 30 55 00 # Reserved
+w 30 56 00 # Reserved
+w 30 57 00 # Reserved
+w 30 58 45 # Reserved
+w 30 59 02 # Reserved
+w 30 5a 80 # Reserved
+w 30 5b 00 # Reserved
+w 30 5c 18 # Reserved
+w 30 5d 02 # Reserved
+w 30 5e 40 # Reserved
+w 30 5f 00 # Reserved
+w 30 60 18 # Reserved
+w 30 61 02 # Reserved
+w 30 62 40 # Reserved
+w 30 63 00 # Reserved
+w 30 64 0c # Reserved
+w 30 65 02 # Reserved
+w 30 66 00 # Reserved
+w 30 67 03 # Reserved
+w 30 68 0c # Reserved
+w 30 69 02 # Reserved
+w 30 6a 20 # Reserved
+w 30 6b 03 # Reserved
+w 30 6c 58 # Reserved
+w 30 6d 60 # Reserved
+w 30 6e 08 # Reserved
+w 30 6f 01 # Reserved
+w 30 70 60 # Reserved
+w 30 71 60 # Reserved
+w 30 72 00 # Reserved
+w 30 73 00 # Reserved
+w 30 74 58 # Reserved
+w 30 75 60 # Reserved
+w 30 76 00 # Reserved
+w 30 77 13 # Reserved
+w 30 78 00 # Reserved
+w 30 79 00 # Reserved
+w 30 7a 00 # Reserved
+w 30 7b 00 # Reference Power-up Configuration Register
+w 30 7c 44 # Reserved
+w 30 7d 00 # Reserved
+w 30 7e c0 # Reserved
+w 30 7f 07 # Reserved
+w 30 00 02 # Writing to Reserved Page2
+w 30 08 04 # Writing to Reserved Page2
+w 30 09 00 # Writing to Reserved Page2
+w 30 0a 00 # Writing to Reserved Page2
+w 30 0b 01 # Writing to Reserved Page2
+w 30 0c 04 # Writing to Reserved Page2
+w 30 0d 00 # Writing to Reserved Page2
+w 30 0e 00 # Writing to Reserved Page2
+w 30 0f 0e # Writing to Reserved Page2
+w 30 10 04 # Writing to Reserved Page2
+w 30 11 00 # Writing to Reserved Page2
+w 30 12 00 # Writing to Reserved Page2
+w 30 13 09 # Writing to Reserved Page2
+w 30 14 04 # Writing to Reserved Page2
+w 30 15 00 # Writing to Reserved Page2
+w 30 16 00 # Writing to Reserved Page2
+w 30 17 05 # Writing to Reserved Page2
+w 30 18 00 # Writing to Reserved Page2
+w 30 19 00 # Writing to Reserved Page2
+w 30 1a 00 # Writing to Reserved Page2
+w 30 1b 00 # Writing to Reserved Page2
+w 30 1c 00 # Writing to Reserved Page2
+w 30 1d 00 # Writing to Reserved Page2
+w 30 1e 00 # Writing to Reserved Page2
+w 30 1f 00 # Writing to Reserved Page2
+w 30 20 44 # Writing to Reserved Page2
+w 30 21 00 # Writing to Reserved Page2
+w 30 22 00 # Writing to Reserved Page2
+w 30 23 07 # Writing to Reserved Page2
+w 30 24 21 # Writing to Reserved Page2
+w 30 25 00 # Writing to Reserved Page2
+w 30 26 20 # Writing to Reserved Page2
+w 30 27 00 # Writing to Reserved Page2
+w 30 28 4b # Writing to Reserved Page2
+w 30 29 00 # Writing to Reserved Page2
+w 30 2a c0 # Writing to Reserved Page2
+w 30 2b 00 # Writing to Reserved Page2
+w 30 2c 4b # Writing to Reserved Page2
+w 30 2d 00 # Writing to Reserved Page2
+w 30 2e e0 # Writing to Reserved Page2
+w 30 2f 00 # Writing to Reserved Page2
+w 30 30 10 # Writing to Reserved Page2
+w 30 31 00 # Writing to Reserved Page2
+w 30 32 00 # Writing to Reserved Page2
+w 30 33 01 # Writing to Reserved Page2
+w 30 34 10 # Writing to Reserved Page2
+w 30 35 00 # Writing to Reserved Page2
+w 30 36 00 # Writing to Reserved Page2
+w 30 37 0e # Writing to Reserved Page2
+w 30 38 10 # Writing to Reserved Page2
+w 30 39 00 # Writing to Reserved Page2
+w 30 3a 00 # Writing to Reserved Page2
+w 30 3b 09 # Writing to Reserved Page2
+w 30 3c 10 # Writing to Reserved Page2
+w 30 3d 00 # Writing to Reserved Page2
+w 30 3e 00 # Writing to Reserved Page2
+w 30 3f 05 # Writing to Reserved Page2
+w 30 40 18 # Writing to Reserved Page2
+w 30 41 03 # Writing to Reserved Page2
+w 30 42 00 # Writing to Reserved Page2
+w 30 43 10 # Writing to Reserved Page2
+w 30 44 1c # Writing to Reserved Page2
+w 30 45 02 # Writing to Reserved Page2
+w 30 46 e0 # Writing to Reserved Page2
+w 30 47 0a # Writing to Reserved Page2
+w 30 48 1c # Writing to Reserved Page2
+w 30 49 02 # Writing to Reserved Page2
+w 30 4a e0 # Writing to Reserved Page2
+w 30 4b 04 # Writing to Reserved Page2
+w 30 4c 1c # Writing to Reserved Page2
+w 30 4d 02 # Writing to Reserved Page2
+w 30 4e c0 # Writing to Reserved Page2
+w 30 4f 0b # Writing to Reserved Page2
+w 30 50 1c # Writing to Reserved Page2
+w 30 51 02 # Writing to Reserved Page2
+w 30 52 c0 # Writing to Reserved Page2
+w 30 53 03 # Writing to Reserved Page2
+w 30 54 1c # Writing to Reserved Page2
+w 30 55 02 # Writing to Reserved Page2
+w 30 56 80 # Writing to Reserved Page2
+w 30 57 0d # Writing to Reserved Page2
+w 30 58 1c # Writing to Reserved Page2
+w 30 59 02 # Writing to Reserved Page2
+w 30 5a 80 # Writing to Reserved Page2
+w 30 5b 01 # Writing to Reserved Page2
+w 30 5c 1c # Writing to Reserved Page2
+w 30 5d 02 # Writing to Reserved Page2
+w 30 5e a0 # Writing to Reserved Page2
+w 30 5f 02 # Writing to Reserved Page2
+w 30 60 1c # Writing to Reserved Page2
+w 30 61 02 # Writing to Reserved Page2
+w 30 62 a0 # Writing to Reserved Page2
+w 30 63 0c # Writing to Reserved Page2
+w 30 64 18 # Writing to Reserved Page2
+w 30 65 02 # Writing to Reserved Page2
+w 30 66 80 # Writing to Reserved Page2
+w 30 67 04 # Writing to Reserved Page2
+w 30 68 1c # Writing to Reserved Page2
+w 30 69 02 # Writing to Reserved Page2
+w 30 6a 80 # Writing to Reserved Page2
+w 30 6b 09 # Writing to Reserved Page2
+w 30 6c 1c # Writing to Reserved Page2
+w 30 6d 02 # Writing to Reserved Page2
+w 30 6e a0 # Writing to Reserved Page2
+w 30 6f 0a # Writing to Reserved Page2
+w 30 70 10 # Writing to Reserved Page2
+w 30 71 00 # Writing to Reserved Page2
+w 30 72 00 # Writing to Reserved Page2
+w 30 73 2e # Writing to Reserved Page2
+w 30 74 1c # Writing to Reserved Page2
+w 30 75 02 # Writing to Reserved Page2
+w 30 76 a0 # Writing to Reserved Page2
+w 30 77 03 # Writing to Reserved Page2
+w 30 78 1c # Writing to Reserved Page2
+w 30 79 02 # Writing to Reserved Page2
+w 30 7a c0 # Writing to Reserved Page2
+w 30 7b 02 # Writing to Reserved Page2
+w 30 7c 1c # Writing to Reserved Page2
+w 30 7d 02 # Writing to Reserved Page2
+w 30 7e c0 # Writing to Reserved Page2
+w 30 7f 0b # Writing to Reserved Page2
+w 30 00 03 # Writing to Reserved Page3
+w 30 08 1c # Writing to Reserved Page3
+w 30 09 02 # Writing to Reserved Page3
+w 30 0a e0 # Writing to Reserved Page3
+w 30 0b 01 # Writing to Reserved Page3
+w 30 0c 1c # Writing to Reserved Page3
+w 30 0d 02 # Writing to Reserved Page3
+w 30 0e e0 # Writing to Reserved Page3
+w 30 0f 0c # Writing to Reserved Page3
+w 30 10 1c # Writing to Reserved Page3
+w 30 11 03 # Writing to Reserved Page3
+w 30 12 00 # Writing to Reserved Page3
+w 30 13 07 # Writing to Reserved Page3
+w 30 14 00 # Writing to Reserved Page3
+w 30 15 00 # Writing to Reserved Page3
+w 30 16 00 # Writing to Reserved Page3
+w 30 17 00 # Writing to Reserved Page3
+w 30 18 00 # Writing to Reserved Page3
+w 30 19 00 # Writing to Reserved Page3
+w 30 1a 00 # Writing to Reserved Page3
+w 30 1b 00 # Writing to Reserved Page3
+w 30 1c 00 # Writing to Reserved Page3
+w 30 1d 00 # Writing to Reserved Page3
+w 30 1e 00 # Writing to Reserved Page3
+w 30 1f 00 # Writing to Reserved Page3
+w 30 20 10 # Writing to Reserved Page3
+w 30 21 00 # Writing to Reserved Page3
+w 30 22 00 # Writing to Reserved Page3
+w 30 23 10 # Writing to Reserved Page3
+w 30 24 18 # Writing to Reserved Page3
+w 30 25 03 # Writing to Reserved Page3
+w 30 26 20 # Writing to Reserved Page3
+w 30 27 2d # Writing to Reserved Page3
+w 30 28 1c # Writing to Reserved Page3
+w 30 29 03 # Writing to Reserved Page3
+w 30 2a 40 # Writing to Reserved Page3
+w 30 2b 12 # Writing to Reserved Page3
+w 30 2c 1c # Writing to Reserved Page3
+w 30 2d 03 # Writing to Reserved Page3
+w 30 2e 40 # Writing to Reserved Page3
+w 30 2f 49 # Writing to Reserved Page3
+w 30 30 1c # Writing to Reserved Page3
+w 30 31 03 # Writing to Reserved Page3
+w 30 32 20 # Writing to Reserved Page3
+w 30 33 2e # Writing to Reserved Page3
+w 30 34 1c # Writing to Reserved Page3
+w 30 35 03 # Writing to Reserved Page3
+w 30 36 60 # Writing to Reserved Page3
+w 30 37 30 # Writing to Reserved Page3
+w 30 38 1c # Writing to Reserved Page3
+w 30 39 03 # Writing to Reserved Page3
+w 30 3a 60 # Writing to Reserved Page3
+w 30 3b 2b # Writing to Reserved Page3
+w 30 3c 1c # Writing to Reserved Page3
+w 30 3d 03 # Writing to Reserved Page3
+w 30 3e 80 # Writing to Reserved Page3
+w 30 3f 32 # Writing to Reserved Page3
+w 30 40 1c # Writing to Reserved Page3
+w 30 41 03 # Writing to Reserved Page3
+w 30 42 80 # Writing to Reserved Page3
+w 30 43 29 # Writing to Reserved Page3
+w 30 44 1c # Writing to Reserved Page3
+w 30 45 03 # Writing to Reserved Page3
+w 30 46 a0 # Writing to Reserved Page3
+w 30 47 38 # Writing to Reserved Page3
+w 30 48 1c # Writing to Reserved Page3
+w 30 49 03 # Writing to Reserved Page3
+w 30 4a a0 # Writing to Reserved Page3
+w 30 4b 23 # Writing to Reserved Page3
+w 30 4c 1c # Writing to Reserved Page3
+w 30 4d 03 # Writing to Reserved Page3
+w 30 4e c0 # Writing to Reserved Page3
+w 30 4f 15 # Writing to Reserved Page3
+w 30 50 1c # Writing to Reserved Page3
+w 30 51 03 # Writing to Reserved Page3
+w 30 52 c0 # Writing to Reserved Page3
+w 30 53 46 # Writing to Reserved Page3
+w 30 54 1c # Writing to Reserved Page3
+w 30 55 03 # Writing to Reserved Page3
+w 30 56 e0 # Writing to Reserved Page3
+w 30 57 13 # Writing to Reserved Page3
+w 30 58 1c # Writing to Reserved Page3
+w 30 59 03 # Writing to Reserved Page3
+w 30 5a e0 # Writing to Reserved Page3
+w 30 5b 48 # Writing to Reserved Page3
+w 30 5c 1c # Writing to Reserved Page3
+w 30 5d 04 # Writing to Reserved Page3
+w 30 5e 00 # Writing to Reserved Page3
+w 30 5f 39 # Writing to Reserved Page3
+w 30 60 1c # Writing to Reserved Page3
+w 30 61 04 # Writing to Reserved Page3
+w 30 62 00 # Writing to Reserved Page3
+w 30 63 22 # Writing to Reserved Page3
+w 30 64 1c # Writing to Reserved Page3
+w 30 65 04 # Writing to Reserved Page3
+w 30 66 20 # Writing to Reserved Page3
+w 30 67 34 # Writing to Reserved Page3
+w 30 68 1c # Writing to Reserved Page3
+w 30 69 04 # Writing to Reserved Page3
+w 30 6a 20 # Writing to Reserved Page3
+w 30 6b 27 # Writing to Reserved Page3
+w 30 6c 1c # Writing to Reserved Page3
+w 30 6d 04 # Writing to Reserved Page3
+w 30 6e 40 # Writing to Reserved Page3
+w 30 6f 17 # Writing to Reserved Page3
+w 30 70 1c # Writing to Reserved Page3
+w 30 71 04 # Writing to Reserved Page3
+w 30 72 40 # Writing to Reserved Page3
+w 30 73 44 # Writing to Reserved Page3
+w 30 74 1c # Writing to Reserved Page3
+w 30 75 04 # Writing to Reserved Page3
+w 30 76 60 # Writing to Reserved Page3
+w 30 77 36 # Writing to Reserved Page3
+w 30 78 1c # Writing to Reserved Page3
+w 30 79 04 # Writing to Reserved Page3
+w 30 7a 60 # Writing to Reserved Page3
+w 30 7b 25 # Writing to Reserved Page3
+w 30 7c 1c # Writing to Reserved Page3
+w 30 7d 04 # Writing to Reserved Page3
+w 30 7e 80 # Writing to Reserved Page3
+w 30 7f 1b # Writing to Reserved Page3
+w 30 00 04 # Writing to Reserved Page4
+w 30 08 1c # Writing to Reserved Page4
+w 30 09 04 # Writing to Reserved Page4
+w 30 0a 80 # Writing to Reserved Page4
+w 30 0b 40 # Writing to Reserved Page4
+w 30 0c 1c # Writing to Reserved Page4
+w 30 0d 04 # Writing to Reserved Page4
+w 30 0e a0 # Writing to Reserved Page4
+w 30 0f 3b # Writing to Reserved Page4
+w 30 10 1c # Writing to Reserved Page4
+w 30 11 04 # Writing to Reserved Page4
+w 30 12 a0 # Writing to Reserved Page4
+w 30 13 20 # Writing to Reserved Page4
+w 30 14 1c # Writing to Reserved Page4
+w 30 15 04 # Writing to Reserved Page4
+w 30 16 c0 # Writing to Reserved Page4
+w 30 17 19 # Writing to Reserved Page4
+w 30 18 1c # Writing to Reserved Page4
+w 30 19 04 # Writing to Reserved Page4
+w 30 1a c0 # Writing to Reserved Page4
+w 30 1b 42 # Writing to Reserved Page4
+w 30 1c 1c # Writing to Reserved Page4
+w 30 1d 04 # Writing to Reserved Page4
+w 30 1e e0 # Writing to Reserved Page4
+w 30 1f 1d # Writing to Reserved Page4
+w 30 20 1c # Writing to Reserved Page4
+w 30 21 04 # Writing to Reserved Page4
+w 30 22 e0 # Writing to Reserved Page4
+w 30 23 3e # Writing to Reserved Page4
+w 30 24 1c # Writing to Reserved Page4
+w 30 25 05 # Writing to Reserved Page4
+w 30 26 00 # Writing to Reserved Page4
+w 30 27 1a # Writing to Reserved Page4
+w 30 28 1c # Writing to Reserved Page4
+w 30 29 05 # Writing to Reserved Page4
+w 30 2a 00 # Writing to Reserved Page4
+w 30 2b 41 # Writing to Reserved Page4
+w 30 2c 1c # Writing to Reserved Page4
+w 30 2d 05 # Writing to Reserved Page4
+w 30 2e 20 # Writing to Reserved Page4
+w 30 2f 31 # Writing to Reserved Page4
+w 30 30 1c # Writing to Reserved Page4
+w 30 31 05 # Writing to Reserved Page4
+w 30 32 20 # Writing to Reserved Page4
+w 30 33 2a # Writing to Reserved Page4
+w 30 34 1c # Writing to Reserved Page4
+w 30 35 05 # Writing to Reserved Page4
+w 30 36 40 # Writing to Reserved Page4
+w 30 37 16 # Writing to Reserved Page4
+w 30 38 1c # Writing to Reserved Page4
+w 30 39 05 # Writing to Reserved Page4
+w 30 3a 40 # Writing to Reserved Page4
+w 30 3b 45 # Writing to Reserved Page4
+w 30 3c 1c # Writing to Reserved Page4
+w 30 3d 05 # Writing to Reserved Page4
+w 30 3e 60 # Writing to Reserved Page4
+w 30 3f 3c # Writing to Reserved Page4
+w 30 40 1c # Writing to Reserved Page4
+w 30 41 05 # Writing to Reserved Page4
+w 30 42 60 # Writing to Reserved Page4
+w 30 43 1f # Writing to Reserved Page4
+w 30 44 1c # Writing to Reserved Page4
+w 30 45 05 # Writing to Reserved Page4
+w 30 46 80 # Writing to Reserved Page4
+w 30 47 35 # Writing to Reserved Page4
+w 30 48 1c # Writing to Reserved Page4
+w 30 49 05 # Writing to Reserved Page4
+w 30 4a 80 # Writing to Reserved Page4
+w 30 4b 26 # Writing to Reserved Page4
+w 30 4c 1c # Writing to Reserved Page4
+w 30 4d 05 # Writing to Reserved Page4
+w 30 4e a0 # Writing to Reserved Page4
+w 30 4f 37 # Writing to Reserved Page4
+w 30 50 1c # Writing to Reserved Page4
+w 30 51 05 # Writing to Reserved Page4
+w 30 52 a0 # Writing to Reserved Page4
+w 30 53 24 # Writing to Reserved Page4
+w 30 54 1c # Writing to Reserved Page4
+w 30 55 05 # Writing to Reserved Page4
+w 30 56 c0 # Writing to Reserved Page4
+w 30 57 33 # Writing to Reserved Page4
+w 30 58 1c # Writing to Reserved Page4
+w 30 59 05 # Writing to Reserved Page4
+w 30 5a c0 # Writing to Reserved Page4
+w 30 5b 28 # Writing to Reserved Page4
+w 30 5c 1c # Writing to Reserved Page4
+w 30 5d 05 # Writing to Reserved Page4
+w 30 5e e0 # Writing to Reserved Page4
+w 30 5f 14 # Writing to Reserved Page4
+w 30 60 1c # Writing to Reserved Page4
+w 30 61 05 # Writing to Reserved Page4
+w 30 62 e0 # Writing to Reserved Page4
+w 30 63 47 # Writing to Reserved Page4
+w 30 64 1c # Writing to Reserved Page4
+w 30 65 06 # Writing to Reserved Page4
+w 30 66 00 # Writing to Reserved Page4
+w 30 67 2f # Writing to Reserved Page4
+w 30 68 1c # Writing to Reserved Page4
+w 30 69 06 # Writing to Reserved Page4
+w 30 6a 00 # Writing to Reserved Page4
+w 30 6b 2c # Writing to Reserved Page4
+w 30 6c 1c # Writing to Reserved Page4
+w 30 6d 06 # Writing to Reserved Page4
+w 30 6e 20 # Writing to Reserved Page4
+w 30 6f 11 # Writing to Reserved Page4
+w 30 70 1c # Writing to Reserved Page4
+w 30 71 06 # Writing to Reserved Page4
+w 30 72 20 # Writing to Reserved Page4
+w 30 73 4a # Writing to Reserved Page4
+w 30 74 1c # Writing to Reserved Page4
+w 30 75 06 # Writing to Reserved Page4
+w 30 76 40 # Writing to Reserved Page4
+w 30 77 18 # Writing to Reserved Page4
+w 30 78 1c # Writing to Reserved Page4
+w 30 79 06 # Writing to Reserved Page4
+w 30 7a 40 # Writing to Reserved Page4
+w 30 7b 43 # Writing to Reserved Page4
+w 30 7c 1c # Writing to Reserved Page4
+w 30 7d 06 # Writing to Reserved Page4
+w 30 7e 60 # Writing to Reserved Page4
+w 30 7f 1e # Writing to Reserved Page4
+w 30 00 05 # Writing to Reserved Page5
+w 30 08 1c # Writing to Reserved Page5
+w 30 09 06 # Writing to Reserved Page5
+w 30 0a 60 # Writing to Reserved Page5
+w 30 0b 3d # Writing to Reserved Page5
+w 30 0c 1c # Writing to Reserved Page5
+w 30 0d 06 # Writing to Reserved Page5
+w 30 0e 80 # Writing to Reserved Page5
+w 30 0f 1c # Writing to Reserved Page5
+w 30 10 1c # Writing to Reserved Page5
+w 30 11 06 # Writing to Reserved Page5
+w 30 12 80 # Writing to Reserved Page5
+w 30 13 3f # Writing to Reserved Page5
+w 30 14 1c # Writing to Reserved Page5
+w 30 15 06 # Writing to Reserved Page5
+w 30 16 a0 # Writing to Reserved Page5
+w 30 17 3a # Writing to Reserved Page5
+w 30 18 1c # Writing to Reserved Page5
+w 30 19 06 # Writing to Reserved Page5
+w 30 1a a0 # Writing to Reserved Page5
+w 30 1b 21 # Writing to Reserved Page5
+w 30 1c 00 # Writing to Reserved Page5
+w 30 1d 00 # Writing to Reserved Page5
+w 30 1e 00 # Writing to Reserved Page5
+w 30 1f 00 # Writing to Reserved Page5
+w 30 20 5c # Writing to Reserved Page5
+w 30 21 90 # Writing to Reserved Page5
+w 30 22 40 # Writing to Reserved Page5
+w 30 23 00 # Writing to Reserved Page5
+w 30 24 00 # Writing to Reserved Page5
+w 30 25 00 # Writing to Reserved Page5
+w 30 26 00 # Writing to Reserved Page5
+w 30 27 00 # Writing to Reserved Page5
+w 30 28 5c # Writing to Reserved Page5
+w 30 29 90 # Writing to Reserved Page5
+w 30 2a 20 # Writing to Reserved Page5
+w 30 2b 00 # Writing to Reserved Page5
+w 30 2c 00 # Writing to Reserved Page5
+w 30 2d 00 # Writing to Reserved Page5
+w 30 2e 00 # Writing to Reserved Page5
+w 30 2f 00 # Writing to Reserved Page5
+w 30 30 00 # Writing to Reserved Page5
+w 30 31 00 # Writing to Reserved Page5
+w 30 32 00 # Writing to Reserved Page5
+w 30 33 00 # Writing to Reserved Page5
+w 30 34 00 # Writing to Reserved Page5
+w 30 35 00 # Writing to Reserved Page5
+w 30 36 00 # Writing to Reserved Page5
+w 30 37 00 # Writing to Reserved Page5
+w 30 38 10 # Writing to Reserved Page5
+w 30 39 00 # Writing to Reserved Page5
+w 30 3a 00 # Writing to Reserved Page5
+w 30 3b 4a # Writing to Reserved Page5
+w 30 3c 18 # Writing to Reserved Page5
+w 30 3d 00 # Writing to Reserved Page5
+w 30 3e 60 # Writing to Reserved Page5
+w 30 3f 4b # Writing to Reserved Page5
+w 30 40 1c # Writing to Reserved Page5
+w 30 41 00 # Writing to Reserved Page5
+w 30 42 80 # Writing to Reserved Page5
+w 30 43 4d # Writing to Reserved Page5
+w 30 44 1c # Writing to Reserved Page5
+w 30 45 00 # Writing to Reserved Page5
+w 30 46 40 # Writing to Reserved Page5
+w 30 47 4a # Writing to Reserved Page5
+w 30 48 30 # Writing to Reserved Page5
+w 30 49 00 # Writing to Reserved Page5
+w 30 4a 00 # Writing to Reserved Page5
+w 30 4b 4d # Writing to Reserved Page5
+w 30 4c 1c # Writing to Reserved Page5
+w 30 4d 00 # Writing to Reserved Page5
+w 30 4e 20 # Writing to Reserved Page5
+w 30 4f 4f # Writing to Reserved Page5
+w 30 50 00 # Writing to Reserved Page5
+w 30 51 00 # Writing to Reserved Page5
+w 30 52 00 # Writing to Reserved Page5
+w 30 53 00 # Writing to Reserved Page5
+w 30 54 10 # Writing to Reserved Page5
+w 30 55 30 # Writing to Reserved Page5
+w 30 56 00 # Writing to Reserved Page5
+w 30 57 4c # Writing to Reserved Page5
+w 30 58 34 # Writing to Reserved Page5
+w 30 59 00 # Writing to Reserved Page5
+w 30 5a 00 # Writing to Reserved Page5
+w 30 5b 4c # Writing to Reserved Page5
+w 30 5c 5c # Writing to Reserved Page5
+w 30 5d 60 # Writing to Reserved Page5
+w 30 5e a0 # Writing to Reserved Page5
+w 30 5f 4c # Writing to Reserved Page5
+w 30 60 0c # Writing to Reserved Page5
+w 30 61 00 # Writing to Reserved Page5
+w 30 62 40 # Writing to Reserved Page5
+w 30 63 00 # Writing to Reserved Page5
+w 30 64 00 # Writing to Reserved Page5
+w 30 65 00 # Writing to Reserved Page5
+w 30 66 00 # Writing to Reserved Page5
+w 30 67 00 # Writing to Reserved Page5
+w 30 68 10 # Writing to Reserved Page5
+w 30 69 30 # Writing to Reserved Page5
+w 30 6a 00 # Writing to Reserved Page5
+w 30 6b 4e # Writing to Reserved Page5
+w 30 6c 10 # Writing to Reserved Page5
+w 30 6d 13 # Writing to Reserved Page5
+w 30 6e e0 # Writing to Reserved Page5
+w 30 6f 51 # Writing to Reserved Page5
+w 30 70 18 # Writing to Reserved Page5
+w 30 71 02 # Writing to Reserved Page5
+w 30 72 40 # Writing to Reserved Page5
+w 30 73 51 # Writing to Reserved Page5
+w 30 74 18 # Writing to Reserved Page5
+w 30 75 00 # Writing to Reserved Page5
+w 30 76 e0 # Writing to Reserved Page5
+w 30 77 54 # Writing to Reserved Page5
+w 30 78 6c # Writing to Reserved Page5
+w 30 79 00 # Writing to Reserved Page5
+w 30 7a c0 # Writing to Reserved Page5
+w 30 7b 53 # Writing to Reserved Page5
+w 30 7c 6c # Writing to Reserved Page5
+w 30 7d 01 # Writing to Reserved Page5
+w 30 7e 00 # Writing to Reserved Page5
+w 30 7f 56 # Writing to Reserved Page5
+w 30 00 06 # Writing to Reserved Page6
+w 30 08 10 # Writing to Reserved Page6
+w 30 09 00 # Writing to Reserved Page6
+w 30 0a 20 # Writing to Reserved Page6
+w 30 0b 52 # Writing to Reserved Page6
+w 30 0c 1c # Writing to Reserved Page6
+w 30 0d 00 # Writing to Reserved Page6
+w 30 0e a0 # Writing to Reserved Page6
+w 30 0f 52 # Writing to Reserved Page6
+w 30 10 1c # Writing to Reserved Page6
+w 30 11 01 # Writing to Reserved Page6
+w 30 12 20 # Writing to Reserved Page6
+w 30 13 57 # Writing to Reserved Page6
+w 30 14 18 # Writing to Reserved Page6
+w 30 15 01 # Writing to Reserved Page6
+w 30 16 80 # Writing to Reserved Page6
+w 30 17 57 # Writing to Reserved Page6
+w 30 18 6c # Writing to Reserved Page6
+w 30 19 01 # Writing to Reserved Page6
+w 30 1a 60 # Writing to Reserved Page6
+w 30 1b 56 # Writing to Reserved Page6
+w 30 1c 6c # Writing to Reserved Page6
+w 30 1d 01 # Writing to Reserved Page6
+w 30 1e a0 # Writing to Reserved Page6
+w 30 1f 59 # Writing to Reserved Page6
+w 30 20 4c # Writing to Reserved Page6
+w 30 21 01 # Writing to Reserved Page6
+w 30 22 40 # Writing to Reserved Page6
+w 30 23 55 # Writing to Reserved Page6
+w 30 24 1c # Writing to Reserved Page6
+w 30 25 01 # Writing to Reserved Page6
+w 30 26 c0 # Writing to Reserved Page6
+w 30 27 5a # Writing to Reserved Page6
+w 30 28 00 # Writing to Reserved Page6
+w 30 29 00 # Writing to Reserved Page6
+w 30 2a 00 # Writing to Reserved Page6
+w 30 2b 00 # Writing to Reserved Page6
+w 30 2c 00 # Writing to Reserved Page6
+w 30 2d 00 # Writing to Reserved Page6
+w 30 2e 00 # Writing to Reserved Page6
+w 30 2f 00 # Writing to Reserved Page6
+w 30 30 00 # Writing to Reserved Page6
+w 30 31 00 # Writing to Reserved Page6
+w 30 32 00 # Writing to Reserved Page6
+w 30 33 00 # Writing to Reserved Page6
+w 30 34 10 # Writing to Reserved Page6
+w 30 35 00 # Writing to Reserved Page6
+w 30 36 00 # Writing to Reserved Page6
+w 30 37 58 # Writing to Reserved Page6
+w 30 38 18 # Writing to Reserved Page6
+w 30 39 02 # Writing to Reserved Page6
+w 30 3a 40 # Writing to Reserved Page6
+w 30 3b 58 # Writing to Reserved Page6
+w 30 3c 18 # Writing to Reserved Page6
+w 30 3d 02 # Writing to Reserved Page6
+w 30 3e 40 # Writing to Reserved Page6
+w 30 3f 58 # Writing to Reserved Page6
+w 30 40 0c # Writing to Reserved Page6
+w 30 41 00 # Writing to Reserved Page6
+w 30 42 00 # Writing to Reserved Page6
+w 30 43 03 # Writing to Reserved Page6
+w 30 44 0c # Writing to Reserved Page6
+w 30 45 00 # Writing to Reserved Page6
+w 30 46 20 # Writing to Reserved Page6
+w 30 47 03 # Writing to Reserved Page6
+w 30 48 00 # Writing to Reserved Page6
+w 30 49 00 # Writing to Reserved Page6
+w 30 4a 00 # Writing to Reserved Page6
+w 30 4b 00 # Writing to Reserved Page6
+w 30 4c 00 # Writing to Reserved Page6
+w 30 4d 00 # Writing to Reserved Page6
+w 30 4e 00 # Writing to Reserved Page6
+w 30 4f 00 # Writing to Reserved Page6
+w 30 50 00 # Writing to Reserved Page6
+w 30 51 00 # Writing to Reserved Page6
+w 30 52 00 # Writing to Reserved Page6
+w 30 53 00 # Writing to Reserved Page6
+w 30 54 02 # Writing to Reserved Page6
+w 30 55 00 # Writing to Reserved Page6
+w 30 56 00 # Writing to Reserved Page6
+w 30 57 00 # Writing to Reserved Page6
+w 30 58 00 # Writing to Reserved Page6
+w 30 59 00 # Writing to Reserved Page6
+w 30 5a 00 # Writing to Reserved Page6
+w 30 5b 00 # Writing to Reserved Page6
+w 30 00 00 # Page Select Register
+w 30 7f 50 # Reserved
+w 30 00 01 # Page Select Register
+w 30 08 40 # Reserved
+w 30 09 00 # Output Driver Power Control Register
+w 30 0a 00 # Common Mode Control Register
+w 30 0b 00 # Over Current Protection Configuration Register
+w 30 0c 40 # HPL Routing Selection Register
+w 30 0d 00 # HPR Routing Selection Register
+w 30 0e 00 # LOL Routing Selection Register
+w 30 0f 00 # LOR Routing Selection Register
+w 30 10 ff # HPL Driver Gain Setting Register
+w 30 11 ff # HPR Driver Gain Setting Register
+w 30 12 ff # LOL Driver Gain Setting Register
+w 30 13 00 # LOR Driver Gain Setting Register
+w 30 14 80 # Headphone Driver Startup Control Register
+w 30 15 00 # Reserved Register
+w 30 16 00 # IN1L to HPL Volume Control Register
+w 30 17 00 # IN1R to HPR Volume Control Register
+w 30 18 40 # MAL Volume Control Register
+w 30 19 00 # MAR Volume Control Register
+w 30 1a 00 # Reserved
+w 30 1b 00 # Reserved
+w 30 1c 2e # Reserved
+w 30 1d d9 # Reserved
+w 30 1e eb # Reserved
+w 30 1f 00 # Reserved
+w 30 20 17 # Reserved
+w 30 21 6c # Reserved
+w 30 22 f5 # Reserved
+w 30 23 00 # Reserved
+w 30 24 00 # Reserved
+w 30 25 00 # Reserved
+w 30 26 00 # Reserved
+w 30 27 00 # Reserved
+w 30 28 11 # Reserved
+w 30 29 26 # Reserved
+w 30 2a 14 # Reserved
+w 30 2b 00 # Reserved
+w 30 2c 00 # Reserved
+w 30 2d 00 # Reserved
+w 30 2e 00 # Reserved
+w 30 2f 00 # Reserved
+w 30 30 7f # Reserved
+w 30 31 ff # Reserved
+w 30 32 f8 # Reserved
+w 30 33 00 # MICBIAS Configuration Register
+w 30 34 7c # Left MICPGA Positive Terminal Input Routing Configuration Register
+w 30 35 bb # Reserved Register
+w 30 36 d4 # Left MICPGA Negative Terminal Input Routing Configuration Register
+w 30 37 00 # Right MICPGA Positive Terminal Input Routing Configuration Register
+w 30 38 c1 # Reserved Register
+w 30 39 a2 # Right MICPGA Negative Terminal Input Routing Configuration Register
+w 30 3a 16 # Floating Input Configuration Register
+w 30 3b 00 # Left MICPGA Volume Control Register
+w 30 3c 00 # Right MICPGA Volume Control Register
+w 30 3d 00 # ADC Power Tune Configuration Register
+w 30 3e 00 # ADC Analog Volume Control Flag Register
+w 30 3f 00 # DAC Analog Gain Control Flag Register
+w 30 40 3c # Reserved
+w 30 41 bb # Reserved
+w 30 42 d5 # Reserved
+w 30 43 00 # Reserved
+w 30 44 00 # Reserved
+w 30 45 00 # Reserved
+w 30 46 00 # Reserved
+w 30 47 00 # Analog Input Quick Charging Configuration Register
+w 30 48 7a # Reserved
+w 30 49 96 # Reserved
+w 30 4a f4 # Reserved
+w 30 4b 00 # Reserved
+w 30 4c 8b # Reserved
+w 30 4d d9 # Reserved
+w 30 4e 43 # Reserved
+w 30 4f 00 # Reserved
+w 30 50 6f # Reserved
+w 30 51 b7 # Reserved
+w 30 52 b0 # Reserved
+w 30 53 00 # Reserved
+w 30 54 74 # Reserved
+w 30 55 26 # Reserved
+w 30 56 bd # Reserved
+w 30 57 00 # Reserved
+w 30 58 95 # Reserved
+w 30 59 b1 # Reserved
+w 30 5a 5b # Reserved
+w 30 5b 00 # Reserved
+w 30 5c 7f # Reserved
+w 30 5d ff # Reserved
+w 30 5e ff # Reserved
+w 30 5f 00 # Reserved
+w 30 60 00 # Reserved
+w 30 61 00 # Reserved
+w 30 62 00 # Reserved
+w 30 63 00 # Reserved
+w 30 00 09 # Page Select Register
+w 30 48 40 # C46 (23:16) ADC Buffer A
+w 30 49 00 # C46 (15:8) ADC Buffer A
+w 30 4a 00 # C46 (7:0) ADC Buffer A
+w 30 4b 00 # C46 Reserved
+w 30 4c 40 # C47 (23:16) ADC Buffer A
+w 30 4d 00 # C47 (15:8) ADC Buffer A
+w 30 4e 00 # C47 (7:0) ADC Buffer A
+w 30 4f 00 # C47 Reserved
+w 30 50 ff # C48 (23:16) ADC Buffer A
+w 30 51 ff # C48 (15:8) ADC Buffer A
+w 30 52 ff # C48 (7:0) ADC Buffer A
+w 30 53 00 # C48 Reserved
+w 30 54 80 # C49 (23:16) ADC Buffer A
+w 30 55 00 # C49 (15:8) ADC Buffer A
+w 30 56 00 # C49 (7:0) ADC Buffer A
+w 30 57 00 # C49 Reserved
+w 30 58 40 # C50 (23:16) ADC Buffer A
+w 30 59 00 # C50 (15:8) ADC Buffer A
+w 30 5a 00 # C50 (7:0) ADC Buffer A
+w 30 5b 00 # C50 Reserved
+w 30 5c 2e # C51 (23:16) ADC Buffer A
+w 30 5d d9 # C51 (15:8) ADC Buffer A
+w 30 5e eb # C51 (7:0) ADC Buffer A
+w 30 5f 00 # C51 Reserved
+w 30 60 17 # C52 (23:16) ADC Buffer A
+w 30 61 6c # C52 (15:8) ADC Buffer A
+w 30 62 f5 # C52 (7:0) ADC Buffer A
+w 30 63 00 # C52 Reserved
+w 30 64 00 # C53 (23:16) ADC Buffer A
+w 30 65 00 # C53 (15:8) ADC Buffer A
+w 30 66 00 # C53 (7:0) ADC Buffer A
+w 30 67 00 # C53 Reserved
+w 30 68 11 # C54 (23:16) ADC Buffer A
+w 30 69 26 # C54 (15:8) ADC Buffer A
+w 30 6a 14 # C54 (7:0) ADC Buffer A
+w 30 6b 00 # C54 Reserved
+w 30 6c 00 # C55 (23:16) ADC Buffer A
+w 30 6d 00 # C55 (15:8) ADC Buffer A
+w 30 6e 00 # C55 (7:0) ADC Buffer A
+w 30 6f 00 # C55 Reserved
+w 30 70 7f # C56 (23:16) ADC Buffer A
+w 30 71 ff # C56 (15:8) ADC Buffer A
+w 30 72 f8 # C56 (7:0) ADC Buffer A
+w 30 73 00 # C56 Reserved
+w 30 74 7c # C57 (23:16) ADC Buffer A
+w 30 75 bb # C57 (15:8) ADC Buffer A
+w 30 76 d4 # C57 (7:0) ADC Buffer A
+w 30 77 00 # C57 Reserved
+w 30 78 c1 # C58 (23:16) ADC Buffer A
+w 30 79 a2 # C58 (15:8) ADC Buffer A
+w 30 7a 16 # C58 (7:0) ADC Buffer A
+w 30 7b 00 # C58 Reserved
+w 30 7c 00 # C59 (23:16) ADC Buffer A
+w 30 7d 00 # C59 (15:8) ADC Buffer A
+w 30 7e 00 # C59 (7:0) ADC Buffer A
+w 30 7f 00 # C59 Reserved
+w 30 00 0a # Page Select Register
+w 30 08 3c # C60 (23:16) ADC Buffer A
+w 30 09 bb # C60 (15:8) ADC Buffer A
+w 30 0a d5 # C60 (7:0) ADC Buffer A
+w 30 0b 00 # C60 Reserved
+w 30 0c 00 # C61 (23:16) ADC Buffer A
+w 30 0d 00 # C61 (15:8) ADC Buffer A
+w 30 0e 00 # C61 (7:0) ADC Buffer A
+w 30 0f 00 # C61 Reserved
+w 30 10 7a # C62 (23:16) ADC Buffer A
+w 30 11 96 # C62 (15:8) ADC Buffer A
+w 30 12 f4 # C62 (7:0) ADC Buffer A
+w 30 13 00 # C62 Reserved
+w 30 14 8b # C63 (23:16) ADC Buffer A
+w 30 15 d9 # C63 (15:8) ADC Buffer A
+w 30 16 43 # C63 (7:0) ADC Buffer A
+w 30 17 00 # C63 Reserved
+w 30 18 6f # Reserved
+w 30 19 b7 # Reserved
+w 30 1a b0 # Reserved
+w 30 1b 00 # Reserved
+w 30 1c 74 # C65 (23:16) ADC Buffer A
+w 30 1d 26 # C65 (15:8) ADC Buffer A
+w 30 1e bd # C65 (7:0) ADC Buffer A
+w 30 1f 00 # C65 Reserved
+w 30 20 95 # C66 (23:16) ADC Buffer A
+w 30 21 b1 # C66 (15:8) ADC Buffer A
+w 30 22 5b # C66 (7:0) ADC Buffer A
+w 30 23 00 # C66 Reserved
+w 30 24 7f # C67 (23:16) ADC Buffer A
+w 30 25 ff # C67 (15:8) ADC Buffer A
+w 30 26 ff # C67 (7:0) ADC Buffer A
+w 30 27 00 # C67 Reserved
+w 30 28 00 # C68 (23:16) ADC Buffer A
+w 30 29 00 # C68 (15:8) ADC Buffer A
+w 30 2a 00 # C68 (7:0) ADC Buffer A
+w 30 2b 00 # C68 Reserved
+w 30 00 00 # Page Select Register
+w 30 7f 3c # Reserved
+w 30 00 01 # Page Select Register
+w 30 08 c0 # Reserved
+w 30 09 00 # Output Driver Power Control Register
+w 30 0a 00 # Common Mode Control Register
+w 30 0b 00 # Over Current Protection Configuration Register
+w 30 00 00 # Page Select Register
+w 30 7f 78 # Reserved
+w 30 00 01 # Page Select Register
+w 30 08 04 # Reserved
+w 30 09 00 # Output Driver Power Control Register
+w 30 0a 00 # Common Mode Control Register
+w 30 0b 00 # Over Current Protection Configuration Register
+w 30 0c 04 # HPL Routing Selection Register
+w 30 0d 00 # HPR Routing Selection Register
+w 30 0e 20 # LOL Routing Selection Register
+w 30 0f 01 # LOR Routing Selection Register
+w 30 10 48 # HPL Driver Gain Setting Register
+w 30 11 02 # HPR Driver Gain Setting Register
+w 30 12 00 # LOL Driver Gain Setting Register
+w 30 13 00 # LOR Driver Gain Setting Register
+w 30 14 48 # Headphone Driver Startup Control Register
+w 30 15 02 # Reserved Register
+w 30 16 20 # IN1L to HPL Volume Control Register
+w 30 17 00 # IN1R to HPR Volume Control Register
+w 30 18 48 # MAL Volume Control Register
+w 30 19 05 # MAR Volume Control Register
+w 30 1a 00 # Reserved
+w 30 1b 00 # Reserved
+w 30 1c 01 # Reserved
+w 30 1d 00 # Reserved
+w 30 1e 60 # Reserved
+w 30 1f 10 # Reserved
+w 30 20 00 # Reserved
+w 30 21 00 # Reserved
+w 30 22 00 # Reserved
+w 30 23 00 # Reserved
+w 30 24 58 # Reserved
+w 30 25 60 # Reserved
+w 30 26 08 # Reserved
+w 30 27 00 # Reserved
+w 30 28 60 # Reserved
+w 30 29 60 # Reserved
+w 30 2a 00 # Reserved
+w 30 2b 00 # Reserved
+w 30 2c 00 # Reserved
+w 30 2d 00 # Reserved
+w 30 2e 00 # Reserved
+w 30 2f 00 # Reserved
+w 30 30 00 # Reserved
+w 30 31 00 # Reserved
+w 30 32 00 # Reserved
+w 30 33 00 # MICBIAS Configuration Register
+w 30 34 44 # Left MICPGA Positive Terminal Input Routing Configuration Register
+w 30 35 00 # Reserved Register
+w 30 36 c0 # Left MICPGA Negative Terminal Input Routing Configuration Register
+w 30 37 03 # Right MICPGA Positive Terminal Input Routing Configuration Register
+w 30 38 00 # Reserved Register
+w 30 39 00 # Right MICPGA Negative Terminal Input Routing Configuration Register
+w 30 3a 00 # Floating Input Configuration Register
+w 30 3b 00 # Left MICPGA Volume Control Register
+w 30 3c 00 # Right MICPGA Volume Control Register
+w 30 3d 00 # ADC Power Tune Configuration Register
+w 30 3e 00 # ADC Analog Volume Control Flag Register
+w 30 3f 00 # DAC Analog Gain Control Flag Register
+w 30 40 44 # Reserved
+w 30 41 00 # Reserved
+w 30 42 00 # Reserved
+w 30 43 03 # Reserved
+w 30 44 21 # Reserved
+w 30 45 00 # Reserved
+w 30 46 00 # Reserved
+w 30 47 00 # Analog Input Quick Charging Configuration Register
+w 30 48 03 # Reserved
+w 30 49 80 # Reserved
+w 30 4a 00 # Reserved
+w 30 4b 10 # Reserved
+w 30 4c 00 # Reserved
+w 30 4d 00 # Reserved
+w 30 4e 00 # Reserved
+w 30 4f 00 # Reserved
+w 30 50 45 # Reserved
+w 30 51 02 # Reserved
+w 30 52 80 # Reserved
+w 30 53 00 # Reserved
+w 30 54 45 # Reserved
+w 30 55 02 # Reserved
+w 30 56 a0 # Reserved
+w 30 57 00 # Reserved
+w 30 58 18 # Reserved
+w 30 59 00 # Reserved
+w 30 5a 00 # Reserved
+w 30 5b 00 # Reserved
+w 30 5c 1c # Reserved
+w 30 5d 00 # Reserved
+w 30 5e 20 # Reserved
+w 30 5f 01 # Reserved
+w 30 60 00 # Reserved
+w 30 61 00 # Reserved
+w 30 62 00 # Reserved
+w 30 63 00 # Reserved
+w 30 64 00 # Reserved
+w 30 65 00 # Reserved
+w 30 66 00 # Reserved
+w 30 67 00 # Reserved
+w 30 68 00 # Reserved
+w 30 69 00 # Reserved
+w 30 6a 00 # Reserved
+w 30 6b 00 # Reserved
+w 30 6c 10 # Reserved
+w 30 6d 00 # Reserved
+w 30 6e 00 # Reserved
+w 30 6f 02 # Reserved
+w 30 70 18 # Reserved
+w 30 71 00 # Reserved
+w 30 72 80 # Reserved
+w 30 73 02 # Reserved
+w 30 74 18 # Reserved
+w 30 75 00 # Reserved
+w 30 76 e0 # Reserved
+w 30 77 05 # Reserved
+w 30 78 6c # Reserved
+w 30 79 00 # Reserved
+w 30 7a c0 # Reserved
+w 30 7b 04 # Reference Power-up Configuration Register
+w 30 7c 6c # Reserved
+w 30 7d 01 # Reserved
+w 30 7e 00 # Reserved
+w 30 7f 07 # Reserved
+w 30 00 02 # Writing to Reserved Page2
+w 30 08 10 # Writing to Reserved Page2
+w 30 09 00 # Writing to Reserved Page2
+w 30 0a 20 # Writing to Reserved Page2
+w 30 0b 03 # Writing to Reserved Page2
+w 30 0c 1c # Writing to Reserved Page2
+w 30 0d 00 # Writing to Reserved Page2
+w 30 0e a0 # Writing to Reserved Page2
+w 30 0f 03 # Writing to Reserved Page2
+w 30 10 1c # Writing to Reserved Page2
+w 30 11 01 # Writing to Reserved Page2
+w 30 12 20 # Writing to Reserved Page2
+w 30 13 08 # Writing to Reserved Page2
+w 30 14 18 # Writing to Reserved Page2
+w 30 15 01 # Writing to Reserved Page2
+w 30 16 a0 # Writing to Reserved Page2
+w 30 17 08 # Writing to Reserved Page2
+w 30 18 6c # Writing to Reserved Page2
+w 30 19 01 # Writing to Reserved Page2
+w 30 1a 80 # Writing to Reserved Page2
+w 30 1b 07 # Writing to Reserved Page2
+w 30 1c 6c # Writing to Reserved Page2
+w 30 1d 01 # Writing to Reserved Page2
+w 30 1e c0 # Writing to Reserved Page2
+w 30 1f 0a # Writing to Reserved Page2
+w 30 20 4c # Writing to Reserved Page2
+w 30 21 01 # Writing to Reserved Page2
+w 30 22 60 # Writing to Reserved Page2
+w 30 23 06 # Writing to Reserved Page2
+w 30 24 1c # Writing to Reserved Page2
+w 30 25 01 # Writing to Reserved Page2
+w 30 26 e0 # Writing to Reserved Page2
+w 30 27 0b # Writing to Reserved Page2
+w 30 28 18 # Writing to Reserved Page2
+w 30 29 02 # Writing to Reserved Page2
+w 30 2a 40 # Writing to Reserved Page2
+w 30 2b 0b # Writing to Reserved Page2
+w 30 2c 6c # Writing to Reserved Page2
+w 30 2d 02 # Writing to Reserved Page2
+w 30 2e 20 # Writing to Reserved Page2
+w 30 2f 0a # Writing to Reserved Page2
+w 30 30 6c # Writing to Reserved Page2
+w 30 31 02 # Writing to Reserved Page2
+w 30 32 60 # Writing to Reserved Page2
+w 30 33 0d # Writing to Reserved Page2
+w 30 34 4c # Writing to Reserved Page2
+w 30 35 02 # Writing to Reserved Page2
+w 30 36 00 # Writing to Reserved Page2
+w 30 37 09 # Writing to Reserved Page2
+w 30 38 1c # Writing to Reserved Page2
+w 30 39 02 # Writing to Reserved Page2
+w 30 3a 80 # Writing to Reserved Page2
+w 30 3b 0e # Writing to Reserved Page2
+w 30 3c 00 # Writing to Reserved Page2
+w 30 3d 00 # Writing to Reserved Page2
+w 30 3e 00 # Writing to Reserved Page2
+w 30 3f 00 # Writing to Reserved Page2
+w 30 40 00 # Writing to Reserved Page2
+w 30 41 00 # Writing to Reserved Page2
+w 30 42 00 # Writing to Reserved Page2
+w 30 43 00 # Writing to Reserved Page2
+w 30 44 00 # Writing to Reserved Page2
+w 30 45 00 # Writing to Reserved Page2
+w 30 46 00 # Writing to Reserved Page2
+w 30 47 00 # Writing to Reserved Page2
+w 30 48 10 # Writing to Reserved Page2
+w 30 49 00 # Writing to Reserved Page2
+w 30 4a 00 # Writing to Reserved Page2
+w 30 4b 0c # Writing to Reserved Page2
+w 30 4c 18 # Writing to Reserved Page2
+w 30 4d 01 # Writing to Reserved Page2
+w 30 4e 40 # Writing to Reserved Page2
+w 30 4f 0c # Writing to Reserved Page2
+w 30 50 00 # Writing to Reserved Page2
+w 30 51 00 # Writing to Reserved Page2
+w 30 52 00 # Writing to Reserved Page2
+w 30 53 00 # Writing to Reserved Page2
+w 30 54 00 # Writing to Reserved Page2
+w 30 55 00 # Writing to Reserved Page2
+w 30 56 00 # Writing to Reserved Page2
+w 30 57 00 # Writing to Reserved Page2
+w 30 58 00 # Writing to Reserved Page2
+w 30 59 00 # Writing to Reserved Page2
+w 30 5a 00 # Writing to Reserved Page2
+w 30 5b 00 # Writing to Reserved Page2
+w 30 5c 10 # Writing to Reserved Page2
+w 30 5d 00 # Writing to Reserved Page2
+w 30 5e 00 # Writing to Reserved Page2
+w 30 5f 0f # Writing to Reserved Page2
+w 30 60 09 # Writing to Reserved Page2
+w 30 61 00 # Writing to Reserved Page2
+w 30 62 00 # Writing to Reserved Page2
+w 30 63 0f # Writing to Reserved Page2
+w 30 64 00 # Writing to Reserved Page2
+w 30 65 00 # Writing to Reserved Page2
+w 30 66 00 # Writing to Reserved Page2
+w 30 67 00 # Writing to Reserved Page2
+w 30 68 00 # Writing to Reserved Page2
+w 30 69 00 # Writing to Reserved Page2
+w 30 6a 00 # Writing to Reserved Page2
+w 30 6b 00 # Writing to Reserved Page2
+w 30 6c 00 # Writing to Reserved Page2
+w 30 6d 00 # Writing to Reserved Page2
+w 30 6e 00 # Writing to Reserved Page2
+w 30 6f 00 # Writing to Reserved Page2
+w 30 70 02 # Writing to Reserved Page2
+w 30 71 00 # Writing to Reserved Page2
+w 30 72 00 # Writing to Reserved Page2
+w 30 73 00 # Writing to Reserved Page2
+w 30 74 00 # Writing to Reserved Page2
+w 30 75 00 # Writing to Reserved Page2
+w 30 76 00 # Writing to Reserved Page2
+w 30 77 00 # Writing to Reserved Page2
+w 30 00 00 # Page Select Register
+w 30 7f 00 # Reserved
+w 30 00 01 # Page Select Register
+w 30 01 00 # Power Configuration Register
+w 30 79 33 # Reserved
+w 30 7a 01 # Reserved
+w 30 21 28 # Reserved
+w 30 22 33 # Reserved
+w 30 23 30 # Reserved
+w 30 00 00 # Page Select Register
+w 30 04 33 # Clock Setting Register 1, Multiplexers
+w 30 05 00 # Clock Setting Register 2, PLL P&R Values
+w 30 06 91 # Clock Setting Register 3, PLL J Values
+w 30 08 00 # Clock Setting Register 5, PLL D Values (LSB)
+w 30 09 00 # Reserved
+w 30 07 08 # Clock Setting Register 4, PLL D Values (MSB)
+w 30 0d 00 # DAC OSR Setting Register 1, MSB Value
+w 30 0e 80 # DAC OSR Setting Register 2, LSB Value
+w 30 12 02 # Clock Setting Register 8, NDAC Values
+w 30 13 88 # Clock Setting Register 9, MDAC Values
+w 30 14 80 # ADC Oversampling (AOSR) Register
+w 30 0c 88 # Clock Setting Register 7, MDAC Values
+w 30 0b 82 # Clock Setting Register 6, NDAC Values
+w 30 00 04 # Writing to Reserved Page4
+w 30 17 05 # Writing to Reserved Page4
+w 30 00 00 # Page Select Register
+w 30 52 00 # ADC Fine Gain Adjust Register
+w 30 53 00 # Left ADC Channel Volume Control Register
+w 30 56 20 # Left Channel AGC Control Register 1
+w 30 57 fe # Left Channel AGC Control Register 2
+w 30 58 00 # Left Channel AGC Control Register 3
+w 30 59 68 # Left Channel AGC Control Register 4
+w 30 5a a8 # Left Channel AGC Control Register 5
+w 30 5b 06 # Left Channel AGC Control Register 6
+w 30 5c 00 # Left Channel AGC Control Register 7
+# Sound_Original_SPK_XA_20120703.txt
