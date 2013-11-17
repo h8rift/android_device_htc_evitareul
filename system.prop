@@ -8,14 +8,6 @@ ro.sf.lcd_density=320
 ro.hwui.text_cache_width=2048
 ro.hwui.text_cache_height=256
 
-# Addidional info for Settings/About/Hardware
-ro.device.chipset=nVidia Tegra AP37
-ro.device.cpu=1.7GHz quad-core
-ro.device.gpu=ULP GeForce
-ro.device.front_cam=1.6MP, 720p
-ro.device.rear_cam=8MP, 1080p
-ro.device.screen_res=720 x 1280 pixels, 4.7"
-
 # Performance and battery tweaks
 ro.ril.disable.power.collapse=1
 debug.performance.tuning=1
@@ -26,6 +18,7 @@ ro.media.dec.jpeg.memcap=8000000
 ro.media.enc.jpeg.quality=100
 
 #RIL
+ro.telephony.ril.v3=signalstrength,skipbrokendatacall
 ro.ril.oem.ecclist=911
 ro.ril.enable.a52=0
 ro.ril.enable.a53=1
@@ -91,37 +84,6 @@ modem.fild.coredumpdir=/data/rfs/data/debug
 modem.power.device=/sys/class/gpio/gpio32/value,0,1
 ro.ril.devicename=/dev/ttyACM1
 modem.powercontrol=disabled
-
-# -----------------------------
-# speaker volume is from 20 to 31
-# this corresponds to -2dB to +8dB
-# -----------------------------
-audio.speaker.voice.0=20
-audio.speaker.voice.1=21
-audio.speaker.voice.2=24
-audio.speaker.voice.3=26
-audio.speaker.voice.4=28
-audio.speaker.voice.5=31
-# -----------------------------
-# earpiece volume is from 20 to 31
-# this corresponds to -2dB to +8dB
-# -----------------------------
-audio.earpiece.voice.0=20
-audio.earpiece.voice.1=21
-audio.earpiece.voice.2=24
-audio.earpiece.voice.3=26
-audio.earpiece.voice.4=28
-audio.earpiece.voice.5=31
-# -----------------------------------
-# headset volume is from 9 to 14
-# this corresponds to -34dB to -19dB
-# ----------------------------------
-audio.headset.voice.0=16
-audio.headset.voice.1=19
-audio.headset.voice.2=22
-audio.headset.voice.3=25
-audio.headset.voice.4=28
-audio.headset.voice.5=31
 
 # Wi-Fi
 wifi.interface=wlan0
