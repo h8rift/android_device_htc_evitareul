@@ -57,6 +57,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf
 
+# Netd prebuilt from the Enrc2b (temp fix for stable Ril)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/bin/netd:system/bin/netd
+
 # Prebuilt Alsa configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/share/alsa/alsa.conf:system/usr/share/alsa/alsa.conf \
