@@ -32,13 +32,15 @@
   <item name="dsp.video">200</item>
   <item name="radio.active">150</item>
   <item name="gps.on">55</item>
-  <item name="battery.capacity">2040</item>
-  <item name="radio.scanning">90</item> <!-- TBD -->
-  <!-- Current consumed by the radio at different signal strengths, when paging  -->
-   <array name="radio.on"> <!-- 1 entry per signal strength bin, TBD -->
-      <value>3.0</value>
-      <value>3.0</value>
-  </array>
+  <item name="battery.capacity">2100</item>
+  <item name="radio.active">185.6</item>
+  <!-- The current consumed by the radio when it is scanning for a signal -->
+  <item name="radio.scanning">122.68</item>
+  <!-- Current consumed by the radio at different signal strengths, when paging -->
+  <array name="radio.on"> <!-- Strength 0 to BINS-1 -->
+      <value>1.16</value>
+      <value>2.15</value>
+    </array>
   <!-- Different CPU speeds as reported in
        /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state -->
   <array name="cpu.speeds">
