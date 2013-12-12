@@ -50,8 +50,8 @@ BOARD_KERNEL_PAGESIZE := 2048
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/htc/evitareul
-TARGET_KERNEL_CONFIG := cyanogenmod_evitareul_defconfig
-#TARGET_PREBUILT_KERNEL := device/htc/evitareul/kernel
+#TARGET_KERNEL_CONFIG := cyanogenmod_evitareul_defconfig
+TARGET_PREBUILT_KERNEL := device/htc/evitareul/kernel
 
 # dont build docs
 DISABLE_DROIDDOC := true
