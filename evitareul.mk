@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #
 # Copyright (C) 2012 The Android Open-Source Project
 #

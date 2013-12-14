@@ -5,11 +5,16 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
     write /sys/class/firmware/timeout 5
 
-on init
+    mkdir /storage 0050 system sdcard_r
+   # mkdir /storage/sdcard0 0000 system system
+    mkdir /storage/usb 0000 system system
+
+    # setup the global environment
     # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell 0700 shell shell
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
-    
+
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
@@ -19,20 +24,16 @@ on init
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-    symlink /storage/sdcard0 /sdcard
-    symlink /storage/sdcard0 /mnt/sdcard
-    symlink /storage/sdcard0 /usbdisk
-    symlink /storage/sdcard0 /mnt/usbdisk
 
-    mkdir /mnt/usb 0775 system system
+    export EXTERNAL_STORAGE4 /storage/usb
+    export EXTERNAL_STORAGE5 /storage/usb
 
-    # create directories for ril
-    mkdir /sys/module/f_rmnet/parameters 0777 system system
-    mkdir /sys/module/rmnet/parameters 0777 system system 
+    # create mountpoints
+    symlink /storage/usb /mnt/usb
 
     #Sophia
-    mkdir /firmware 0777 system system
-    mkdir /firmware/mdm 0777 system system
+    mkdir /firmware 0771 system system
+    mkdir /firmware/mdm 0771 system system
     #Sophia
 
 on fs
@@ -40,31 +41,19 @@ on fs
     mkdir /rfs 0755 radio radio
     mkdir /devlog 0700 root root
     mount_all /fstab.evitareul
+
     chmod 0660 /rca/calib.nvm
     chmod 0660 /rca
     chmod 0660 /rfs
     setprop ro.crypto.fuse_sdcard true
-    setprop ro.crypto.umount_sd false
 
-    #Sophia
-    mount vfat /dev/block/platform/sdhci-tegra.3/by-name/MDM  /firmware/mdm ro shortname=lower
-    exec /system/bin/sh /init.qcom.firmware_links.sh /firmware/mdm/image /firmware "*.mbn *.img"
+        #Sophia
+        mount vfat /dev/block/platform/sdhci-tegra.3/by-name/MDM  /firmware/mdm ro shortname=lower
+        exec /system/bin/sh /init.qcom.firmware_links.sh /firmware/mdm/image /firmware "*.mbn *.img"
 
-    mkdir /data/qcks 0770 system system
-    mkdir /data/efs 0771 system system
-    #Sophia
-
-# ril (i have added this to fix ril files not copying correctly) --Lloir
-     mkdir /data/efs/ 0775 system system
-     mkdir /mnt/sdcard/tombstones 0775 system system
-     copy  /firmware/mdm/image/htcnvbak /data/efs/htcnvbak
-     copy  /firmware/mdm/image/htcrcust /data/efs/htcrcust
-     copy  /firmware/mdm/image/htcssmem /data/efs/htcssmem
-     copy  /firmware/mdm/image/htcnvmfg /data/efs/htcnvmfg
-     copy  /firmware/mdm/image/htcrfnv /data/efs/htcrfnv
-     copy  /firmware/mdm/image/htccnv /data/efs/htccnv
-     copy  /firmware/mdm/image/htcuserd /data/efs/htcuserd
-     copy  /firmware/mdm/image/htccnv /data/efs/htccdma
+        mkdir /data/qcks 0770 system system
+        mkdir /data/efs 0771 system system
+        #Sophia
     
 on post-fs-data
     # We will remap this as /storage/sdcard0 with the sdcard fuse tool
@@ -189,6 +178,13 @@ on boot
     #insmod /lib/modules/cdc-acm.ko
     #insmod /lib/modules/raw_ip_net.ko
 
+#+SSD_RIL: from Qualcomm socket path
+    mkdir /dev/socket/qmux_radio 0770 radio radio
+    mkdir /dev/socket/qmux_audio 0770 audio audio
+    mkdir /dev/socket/qmux_bluetooth 0770 bluetooth bluetooth
+    mkdir /dev/socket/qmux_gps 0770 gps gps
+#-SSD_RIL: from Qualcomm socket path
+
 # bluetooth
     chown bluetooth net_bt_stack /dev/ttyHS2
     chmod 0660 /dev/ttyHS2
@@ -299,10 +295,28 @@ on boot
     # Reduces power comsuption during video playback from sdcards
     write /sys/block/mmcblk0/queue/read_ahead_kb 1024
     write /sys/block/mmcblk0/bdi/read_ahead_kb 1024
+
+# + SSD_RIL : Enlarge TCP window size for ATT HSDPA Cat 14
+    setprop net.tcp.buffersize.lte     524288,1048576,3461120,262144,524288,1048576
+    setprop net.tcp.buffersize.hspap   4096,174760,1572864,4096,16384,110208
+    setprop net.tcp.buffersize.hspa    4096,174760,1572864,4096,16384,110208
+    setprop net.tcp.buffersize.hsupa   4096,174760,1572864,4096,16384,110208
+    setprop net.tcp.buffersize.hsdpa   4096,174760,1572864,4096,16384,110208
+    setprop net.tcp.buffersize.umts    4096,174760,1572864,4096,16384,110208
+    setprop net.tcp.buffersize.edge    4096,174760,1572864,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4096,174760,1572864,4096,8760,11680
+# - SSD_RIL : Enlarge TCP window size for ATT HSDPA Cat 14
     
-    # Flash storage isn't a good entropy source, and only causes locking    
-    # overhead in the kernel. Turn it off
-    write /sys/block/mmcblk0/queue/add_random 0
+#++SSD_GPS
+    mkdir /dev/socket/qmux_gps 0770 gps gps
+    #RIL team Damon request to 0770 to pass ATT test
+    #chmod 2770 /dev/socket/qmux_gps
+
+    #Create directories for Location services
+    mkdir /data/misc/location 0770 gps gps
+    mkdir /data/misc/location/mq 0770 gps gps
+#--SSD_GPS
+
 
     # Discretix DRM change start
     mkdir /data/DxDrm
@@ -311,16 +325,17 @@ on boot
     mkdir /sdcard/download
     copy /etc/DxDrmConfig_Server.txt /data/DxDrm/DxDrmConfig_Server.txt
 
-# AUDIO
+#AUD
     mkdir /data/audio
     chmod 755 /data/audio
     chown media audio /data/audio
-    
-# bugreport is triggered by the VOLUME-DOWN and VOLUME-UP keys/
-service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
-    disabled
-    oneshot
-    keycodes 115 114
+
+service gsm0710mux /system/bin/gsm0710muxd -s /dev/ttyACM0 -v 5 -n 8 -m basic
+    class core
+    user radio
+    group radio cache inet misc
+#    oneshot
+    disabled    
 
 service nvm-server /system/bin/nvm_server
     class core
@@ -328,6 +343,36 @@ service nvm-server /system/bin/nvm_server
     user root
     group root
     oneshot
+
+#service poweron_modem /system/bin/poweron_modem.sh /data/modem_work/
+##    class late_start
+#    user root
+#    group root
+#    oneshot
+##    start gsm0710mux
+
+service modem-daemon /system/bin/modemd
+
+#Sophia-0410
+service kickstart /system/bin/qcks -1 modem_st1 -2 modem_st2 -3 mdm9k_config -i /firmware/mdm/image/ -u
+    class core
+    oneshot
+
+service ril-daemon /system/bin/rild
+    class core
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+    socket rild-audio-gsm stream 660 radio system
+    socket rild-htc-coredump stream 660 radio system
+    socket rild-agps stream 660 radio system
+    socket rild-audio stream 660 radio audio
+## +++ for ganlite ril
+    socket ganat stream 660 radio ganlite_access
+    socket ganpsat stream 660 radio ganlite_access
+    socket kipc stream 660 radio ganlite_access
+## --- for ganlite ril
+    user root
+    group radio cache inet misc audio log
 
 service init-acmx0 /system/bin/mknod /dev/ttyACMX0 c 66 0
     class core
@@ -337,18 +382,16 @@ service init-acmx2 /system/bin/chmod 777 /dev/ttyACMX0
     class core
     oneshot
 
-# Start GPS daemon
-service gps-daemon /system/bin/glgps -c /system/etc/gps/gpsconfig.xml
-    socket gps seqpacket 0660 gps system
-    class main
-    user gps
-    group system sdcard_rw inet radio sdcard_r
+# Start FIL daemon
+#service fil-daemon /system/bin/fild -p /dev/ttyHS0 -s /dev/ttyACM0 -f /dev/ttyACM0 --with-bt3
+#    user radio
 
 service poweron_modem /system/bin/poweron_modem_fls.sh /data/modem_work/
     class main
     user root
     group root
     oneshot
+#    start gsm0710mux
     disabled
 
 service htcbatt /system/bin/htcbatt
@@ -670,6 +713,7 @@ service ril-daemon /system/bin/rild
     group radio cache inet misc audio log
 
 #++SSD_RIL
+
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
     class core
