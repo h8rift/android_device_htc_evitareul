@@ -34,8 +34,8 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/ramdisk/init.scripts.sh:root/init.scripts.sh \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.evitareul.rc:root/ueventd.evitareul.rc \
-    $(LOCAL_PATH)/ramdisk/fstab.evitareul:root/fstab.evitareul
-
+    $(LOCAL_PATH)/ramdisk/fstab.evitareul:root/fstab.evitareul \
+    $(LOCAL_PATH)/ramdisk/init.qcom.firmware_links.sh:root/init.qcom.firmware_links.sh
 
 # Prebuilt Audio/GPS/Camera/Wi-Fi configs
 PRODUCT_COPY_FILES += \
@@ -162,10 +162,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/tfa/voice.eq:system/etc/tfa/voice.eq \
     $(LOCAL_PATH)/prebuilt/tfa/voice.preset:system/etc/tfa/voice.preset \
     $(LOCAL_PATH)/prebuilt/tfa/voice.speaker:system/etc/tfa/voice.speaker
-
-# Hostapd
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/hostap/hostapd:system/bin/hostapd
     
 PRODUCT_PACKAGES += \
     hostapd_cli \
