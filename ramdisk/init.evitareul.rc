@@ -54,6 +54,17 @@ on fs
     mkdir /data/efs 0771 system system
     #Sophia
 
+# ril (i have added this to fix ril files not copying correctly) --Lloir
+     mkdir /data/efs/ 0775 system system
+     mkdir /mnt/sdcard/tombstones 0775 system system
+     copy  /firmware/mdm/image/htcnvbak /data/efs/htcnvbak
+     copy  /firmware/mdm/image/htcrcust /data/efs/htcrcust
+     copy  /firmware/mdm/image/htcssmem /data/efs/htcssmem
+     copy  /firmware/mdm/image/htcnvmfg /data/efs/htcnvmfg
+     copy  /firmware/mdm/image/htcrfnv /data/efs/htcrfnv
+     copy  /firmware/mdm/image/htccnv /data/efs/htccnv
+     copy  /firmware/mdm/image/htcuserd /data/efs/htcuserd
+     copy  /firmware/mdm/image/htccnv /data/efs/htccdma
     
 on post-fs-data
     # We will remap this as /storage/sdcard0 with the sdcard fuse tool
