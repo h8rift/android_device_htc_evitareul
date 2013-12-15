@@ -45,10 +45,6 @@ on boot
     socket dnsproxyd stream 0660 root inet
     socket mdns stream 0660 root system
 
-service debuggerd /system/bin/debuggerd
-    class main
-    cgroup bg
-
 service gsm0710mux /system/bin/gsm0710muxd -s /dev/ttyACM0 -v 5 -n 8 -m basic
     class core
     user radio
