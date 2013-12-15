@@ -1,0 +1,94 @@
+on boot
+
+#+SSD_RIL: from Qualcomm socket path
+    mkdir /dev/socket/qmux_radio 0770 radio radio
+    mkdir /dev/socket/qmux_audio 0770 audio audio
+    mkdir /dev/socket/qmux_bluetooth 0770 bluetooth bluetooth
+    mkdir /dev/socket/qmux_gps 0770 gps gps
+#-SSD_RIL: from Qualcomm socket path
+
+# HTC SSD USB
+    chown system system /sys/class/android_usb/f_modem/on
+    chown system system /sys/class/android_usb/f_diag/on
+    chown system system /sys/class/android_usb/f_rmnet/on
+    chown system system /sys/devices/platform/android_usb/usb_disable
+
+#set diag permissions
+    chown radio radio /dev/diag
+    chown radio radio /dev/diag_mdm
+    chown radio radio /dev/htcdiag
+    chown radio radio /dev/diag_arm9
+    chown radio radio /dev/btdiag
+    chmod 0660 /dev/diag
+    chmod 0660 /dev/diag_mdm
+    chmod 0660 /dev/htcdiag
+    chmod 0660 /dev/diag_arm9
+    chmod 0660 /dev/btdiag
+
+   # Define TCP buffer sizes for various networks
+   # ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 4096,87380,110208,4096,16384,110208
+    setprop net.tcp.buffersize.wifi    524288,1048576,2097152,262144,524288,1048576
+    setprop net.tcp.buffersize.lte     524288,1048576,2097152,262144,524288,1048576
+    setprop net.tcp.buffersize.hspa    4094,87380,704512,4096,16384,262144
+    setprop net.tcp.buffersize.hsdpa   4094,87380,704512,4096,16384,110208
+    setprop net.tcp.buffersize.umts    4094,87380,704512,4096,16384,110208
+    setprop net.tcp.buffersize.edge    4093,26280,704512,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4092,8760,704512,4096,8760,11680
+    setprop net.tcp.buffersize.hsupa   4094,87380,262144,4096,16384,262144
+    setprop net.tcp.buffersize.hspap   4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.evdo    4094,87380,262144,4096,16384,262144
+
+    service netd /system/bin/netd
+    class main
+    socket netd stream 0660 root system
+    socket dnsproxyd stream 0660 root inet
+    socket mdns stream 0660 root system
+
+service gsm0710mux /system/bin/gsm0710muxd -s /dev/ttyACM0 -v 5 -n 8 -m basic
+    class core
+    user radio
+    group radio cache inet misc
+#    oneshot
+    disabled
+
+service nvm-server /system/bin/nvm_server
+    class core
+    cgroup bg
+    socket nvm-ctl stream 660 radio radio
+    user root
+    group root
+    oneshot
+
+#service poweron_modem /system/bin/poweron_modem.sh /data/modem_work/
+##    class late_start
+#    user root
+#    group root
+#    oneshot
+##    start gsm0710mux
+
+service modem-daemon /system/bin/modemd
+
+#Sophia-0410
+service kickstart /system/bin/qcks -1 modem_st1 -2 modem_st2 -3 mdm9k_config -i /firmware/mdm/image/ -u
+    class core
+    oneshot
+
+
+service ril-daemon /system/bin/rild
+    class core
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+    socket rild-audio-gsm stream 660 radio system
+    socket rild-htc-coredump stream 660 radio system
+    socket rild-agps stream 660 radio system
+    socket rild-audio stream 660 radio audio
+## +++ for ganlite ril
+    socket ganat stream 660 radio ganlite_access
+    socket ganpsat stream 660 radio ganlite_access
+    socket kipc stream 660 radio ganlite_access
+## --- for ganlite ril
+    user root
+    group radio cache inet misc audio log
+
+   
