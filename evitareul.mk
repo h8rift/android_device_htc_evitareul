@@ -35,7 +35,8 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.evitareul.rc:root/ueventd.evitareul.rc \
     $(LOCAL_PATH)/ramdisk/fstab.evitareul:root/fstab.evitareul \
-    $(LOCAL_PATH)/ramdisk/init.qcom.firmware_links.sh:root/init.qcom.firmware_links.sh
+    $(LOCAL_PATH)/ramdisk/init.qcom.firmware_links.sh:root/init.qcom.firmware_links.sh \
+    $(LOCAL_PATH)/ramdisk/init.fuckedupril.rc:root/init.fuckedupril.rc
 
 # Prebuilt Audio/GPS/Camera/Wi-Fi configs
 PRODUCT_COPY_FILES += \
