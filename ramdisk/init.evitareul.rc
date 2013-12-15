@@ -96,49 +96,24 @@ on boot
     chmod 0660 /sys/class/power_supply/battery/charger_control
     chown radio radio /sys/class/power_supply/battery/phone_call
     chmod 0660 /sys/class/power_supply/battery/phone_call
+    setprop ro.htc.htcmode.data.path "/dev/ttyHSUSB3"
 
-# Kernel Tweaking
-    write /proc/sys/kernel/panic_on_oops 0
-    write /proc/sys/kernel/hung_task_timeout_secs 0
-    write /proc/cpu/alignment 4
-    write /proc/sys/kernel/sched_latency_ns 10000000
-    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
-    write /proc/sys/kernel/sched_compat_yield 1
-    write /proc/sys/kernel/sched_child_runs_first 0
-    write /proc/sys/kernel/randomize_va_space 2
-    write /proc/sys/kernel/kptr_restrict 2
-    write /proc/sys/kernel/dmesg_restrict 1
-    write /proc/sys/vm/mmap_min_addr 32768
-    write /proc/sys/net/ipv4/ping_group_range "0 2147483647"
-    write /proc/sys/kernel/sched_rt_runtime_us 950000
-    write /proc/sys/kernel/sched_rt_period_us 1000000
+    # for limit charging
+    chown system system /sys/class/power_supply/battery/medialink
+    chmod 0660 /sys/class/power_supply/battery/medialink
 
-# Memory management.  Basic kernel parameters, and allow the high
-# level system server to be able to adjust the kernel OOM driver
-# parameters to match how it is managing things.
-    write /proc/sys/vm/overcommit_memory 1
-    write /proc/sys/vm/min_free_order_shift 4
-    write /proc/sys/vm/dirty_ratio 55
-    write /proc/sys/vm/dirty_writeback_centisecs 2000
-    write /proc/sys/vm/drop_caches 2
-    write /proc/sys/vm/min_free_kbytes 5120
-    write /proc/sys/vm/min_free_order_shift 3
-    write /proc/sys/vm/oom_kill_allocating_task 1
-    write /proc/sys/vm/page-cluster 3
-    write /proc/sys/vm/panic_on_oom 0
-    write /proc/sys/vm/swappiness 40
-    write /proc/sys/vm/vfs_cache_pressure 70
-    chown root system /sys/module/lowmemorykiller/parameters/adj
-    chmod 0664 /sys/module/lowmemorykiller/parameters/adj
-    chown root system /sys/module/lowmemorykiller/parameters/minfree
-    chmod 0664 /sys/module/lowmemorykiller/parameters/minfree
-    
-# LowMem reserve it is Currently set to 12MB
-    #write /proc/sys/vm/lowmem_reserve_ratio "128 128"
+    # power up/down interface
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
 
-# Tweak background writeout
-    write /proc/sys/vm/dirty_expire_centisecs 1400
-    write /proc/sys/vm/dirty_background_ratio  60
+# BB UART settings
+#    chown radio system /dev/ttyHS0
+
+# GPIO BB access for user radio
+    chown radio system /sys/class/gpio/gpio32/value
+
 
 # allow system to modify ksm control files
     chown root system /sys/kernel/mm/ksm/pages_to_scan
@@ -173,10 +148,28 @@ on boot
 
 # Load modules while booting 
     insmod /system/lib/modules/bcmdhd.ko
-    #insmod /lib/modules/baseband-xmm-power2.ko
-    #insmod /lib/modules/baseband_usb_chr.ko
-    #insmod /lib/modules/cdc-acm.ko
-    #insmod /lib/modules/raw_ip_net.ko
+    insmod /lib/modules/baseband-xmm-power2.ko
+    insmod /lib/modules/baseband_usb_chr.ko
+    insmod /lib/modules/cdc-acm.ko
+    insmod /lib/modules/raw_ip_net.ko
+
+# HTC SSD USB
+    chown system system /sys/class/android_usb/f_modem/on
+    chown system system /sys/class/android_usb/f_diag/on
+    chown system system /sys/class/android_usb/f_rmnet/on
+    chown system system /sys/devices/platform/android_usb/usb_disable
+
+#set diag permissions
+    chown radio radio /dev/diag
+    chown radio radio /dev/diag_mdm
+    chown radio radio /dev/htcdiag
+    chown radio radio /dev/diag_arm9
+    chown radio radio /dev/btdiag
+    chmod 0660 /dev/diag
+    chmod 0660 /dev/diag_mdm
+    chmod 0660 /dev/htcdiag
+    chmod 0660 /dev/diag_arm9
+    chmod 0660 /dev/btdiag
 
 #+SSD_RIL: from Qualcomm socket path
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -307,6 +300,13 @@ on boot
     setprop net.tcp.buffersize.gprs    4096,174760,1572864,4096,8760,11680
 # - SSD_RIL : Enlarge TCP window size for ATT HSDPA Cat 14
     
+    # Discretix DRM change start
+    mkdir /data/DxDrm
+    mkdir /data/DxDrm/fuse
+    chmod 555 /data/DxDrm
+    mkdir /sdcard/download
+    # Discretix DRM change end
+
 #++SSD_GPS
     mkdir /dev/socket/qmux_gps 0770 gps gps
     #RIL team Damon request to 0770 to pass ATT test
@@ -397,6 +397,18 @@ service poweron_modem /system/bin/poweron_modem_fls.sh /data/modem_work/
 service htcbatt /system/bin/htcbatt
      class core
      oneshot
+
+service dhcpcd_brcm-pan /system/bin/dhcpcd -ABKL
+    disabled
+    oneshot
+
+# init dmagent
+service dmagent /system/bin/dmagent -N
+    class late_start
+    socket dmagent stream 660 root inet
+    user root
+    group radio cache inet misc
+    oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -e/data/misc/wifi/entropy.bin
@@ -608,6 +620,19 @@ on property:ro.hdmi.enable=true
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
 
+#++SSD_RIL
+
+# QMUX must be in multiple groups to support external process connections
+service qmuxd /system/bin/qmuxd
+    class core
+    user root
+    group radio audio
+
+service netmgrd /system/bin/netmgrd
+    class core
+
+#--SSD_RIL
+
 # Set this property so surfaceflinger is not started by system_init
     setprop system_init.startsurfaceflinger 0
 
@@ -621,10 +646,6 @@ on property:ro.hdmi.enable=true
     # maxwen: is done in userinit below
     # Run sysinit
     #exec /system/bin/sysinit
-
-on property:selinux.reload_policy=1
-    restart ueventd
-    restart installd
 
  service choice_fn /sbin/choice_fn
     oneshot
@@ -644,47 +665,9 @@ service detect_key /sbin/detect_key
 service htcbatt /sbin/htcbatt
     oneshot
 
-service console /system/bin/sh
-    class core
-    console
-    disabled
-    user shell
-    group log
-
-# adbd is controlled via property triggers in init.<platform>.usb.rc
-service adbd /sbin/adbd
-    class core
-    socket adbd stream 660 system system
-    disabled
-    seclabel u:r:adbd:s0
-
-# adbd on at boot in emulator
-on property:ro.kernel.qemu=1
-    start adbd
-
-service servicemanager /system/bin/servicemanager
-    class core
-    user system
-    group system
-    critical
-    onrestart restart zygote
-    onrestart restart media
-    onrestart restart surfaceflinger
-    onrestart restart drm
-
-service vold /system/bin/vold
-    class core
-    socket vold stream 0660 root mount
-    ioprio be 2
-
-service netd /system/bin/netd
-    class main
-    socket netd stream 0660 root system
-    socket dnsproxyd stream 0660 root inet
-    socket mdns stream 0660 root system
-
 service debuggerd /system/bin/debuggerd
     class main
+    cgroup bg
 
 service gsm0710mux /system/bin/gsm0710muxd -s /dev/ttyACM0 -v 5 -n 8 -m basic
     class core
@@ -703,69 +686,22 @@ service nvm-server /system/bin/nvm_server
 service modem-daemon /system/bin/modemd
 
 service ril-daemon /system/bin/rild
-    class main
+    class core
     socket rild stream 660 root radio
     socket rild-debug stream 660 radio system
+    socket rild-audio-gsm stream 660 radio system
     socket rild-htc-coredump stream 660 radio system
     socket rild-agps stream 660 radio system
     socket rild-audio stream 660 radio audio
+## +++ for ganlite ril
+    socket ganat stream 660 radio ganlite_access
+    socket ganpsat stream 660 radio ganlite_access
+    socket kipc stream 660 radio ganlite_access
+## --- for ganlite ril
     user root
     group radio cache inet misc audio log
-
-#++SSD_RIL
-
-# QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
-    class core
-    user root
-    group radio audio
-
-service netmgrd /system/bin/netmgrd
-    class core
-
-#--SSD_RIL
 
 #Sophia-0410
 service kickstart /system/bin/qcks -1 modem_st1 -2 modem_st2 -3 mdm9k_config -i /firmware/mdm/image/ -u
     class core
-    oneshot
-
-service surfaceflinger /system/bin/surfaceflinger
-    class main
-    user system
-    group graphics drmrpc
-    onrestart restart zygote
-
-service sshd /system/bin/start-ssh
-    class main
-    disabled
-
-service mdnsd /system/bin/mdnsd
-    class main
-    user mdnsr
-    group inet net_raw
-    socket mdnsd stream 0660 mdnsr inet
-    disabled
-    oneshot
-   
-service mtpd /system/bin/mtpd
-    class main
-    socket mtpd stream 600 system system
-    user vpn
-    group vpn net_admin inet net_raw
-    disabled
-    oneshot
-
-# Execute files in /etc/init.d before booting
-service userinit /system/xbin/busybox run-parts /system/etc/init.d
-    oneshot
-    class late_start
-    user root
-    group root
-
-# Compcache - handle at boot
-service compcache /system/bin/handle_compcache
-    class main
-    user root
-    group root
     oneshot
