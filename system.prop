@@ -108,3 +108,6 @@ persist.demo.hdmirotation=portrait
 
 # fw.power_user_switcher=true
 service.htc_ebdlogd.enable=1
+
+# Enable legacy screenshot code for older Tegra 3 EGL libs
+ro.bq.gpu_to_cpu_unsupported=1
