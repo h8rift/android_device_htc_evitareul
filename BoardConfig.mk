@@ -29,24 +29,13 @@ WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/fw_bcm4334.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcm4334_apsta.bin"
 WIFI_DRIVER_FW_PATH_P2P     := "/system/etc/firmware/fw_bcm4334_p2p.bin"
 
-# Audio
-BOARD_USES_FLUENCE_INCALL := true
-BOARD_USES_SEPERATED_AUDIO_INPUT := true
-
-# Sense 4.5 / Sense 5 audio.primary blob support. See: include/hardware/audio.h
-COMMON_GLOBAL_CFLAGS += -DHTC_TEGRA_AUDIO
-# Uncomment if you want try the Sense 5 audio_policy
- COMMON_GLOBAL_CFLAGS += -DMR1_AUDIO_BLOB
-
-# GPS
-BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := tegra
-TARGET_PROVIDES_GPS_LOC_API := true
-
 # BT
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/evitareul/bluetooth/vnd_evitareul.txt
+
+# EGL
+BOARD_EGL_NEEDS_LEGACY_FB := true
 
 # Kernel / Ramdisk
 TARGET_PROVIDES_INIT_TARGET_RC := true
