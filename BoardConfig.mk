@@ -63,8 +63,27 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := device/htc/evitareul/ramdisk/fstab.evitareul
 RECOVERY_FSTAB_VERSION := 2 
 
-# Device specific SELinux policies
-BOARD_SEPOLICY_DIRS += \
-    device/htc/evitareul/selinux
+# SE Linux policies
+BOARD_SEPOLICY_DIRS := \
+    device/htc/tegra3-common/sepolicy
 
-#BOARD_SEPOLICY_UNION +=
+BOARD_SEPOLICY_UNION += \
+	bridge.te \
+	device.te \
+	dhcp.te \
+	domain.te \
+	file.te \
+	file_contexts \
+	init.te \
+	kickstart.te \
+	netmgrd.te \
+	property.te \
+	property_contexts \
+	qmux.te \
+	restorecon.te \
+	rild.te \
+	system.te \
+	te_macros \
+	ueventd.te \
+	wpa_supplicant.te
+	
