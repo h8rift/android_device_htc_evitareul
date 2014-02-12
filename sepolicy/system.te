@@ -1,0 +1,4 @@
+allow system init:unix_dgram_socket sendto;
+allow system wpa_socket:unix_dgram_socket sendto;
+
+allow system sysfs:file { read open write };
