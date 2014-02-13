@@ -1,5 +1,5 @@
 import init.tegra3-common.rc
-import init.fuckedupril.rc
+import init.ril.rc
 import init.superuser.rc
 
 on early-init
