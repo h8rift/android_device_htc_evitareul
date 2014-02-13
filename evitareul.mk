@@ -36,8 +36,8 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/ramdisk/ueventd.evitareul.rc:root/ueventd.evitareul.rc \
     $(LOCAL_PATH)/ramdisk/fstab.evitareul:root/fstab.evitareul \
     $(LOCAL_PATH)/ramdisk/init.qcom.firmware_links.sh:root/init.qcom.firmware_links.sh \
-    $(LOCAL_PATH)/ramdisk/init.fuckedupril.rc:root/init.fuckedupril.rc
-
+    $(LOCAL_PATH)/ramdisk/init.ril.rc:root/init.ril.rc
+    
 # Prebuilt Audio/GPS/Camera/Wi-Fi configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/dsp/AIC3008_REG_DualMic.csv:system/etc/AIC3008_REG_DualMic.csv \
