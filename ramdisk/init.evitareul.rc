@@ -53,6 +53,9 @@ on fs
     chmod 0660 /rfs
     setprop ro.crypto.fuse_sdcard true
 
+    # For incall audio and mic --- 777 is ultra temp
+    chmod 0777 /dev/socket/qmux_audio/qmux_connect_socket
+
         #Sophia
         mount vfat /dev/block/platform/sdhci-tegra.3/by-name/MDM  /firmware/mdm ro shortname=lower
         exec /system/bin/sh /init.qcom.firmware_links.sh /firmware/mdm/image /firmware "*.mbn *.img"
