@@ -38,6 +38,11 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/ramdisk/init.qcom.firmware_links.sh:root/init.qcom.firmware_links.sh \
     $(LOCAL_PATH)/ramdisk/init.ril.rc:root/init.ril.rc
     
+# Camera config files been modified to stop reverse camera
+PRODUCT_COPY_FILES := \
+    $(LOCAL_PATH)/configs/nvcamera.conf:system/etc/nvcamera.conf \
+    $(LOCAL_PATH)/configs/nvcamera_2nd.conf:system/etc/nvcamera_2nd.conf
+
 # Input device configeration files
 # for remapped APP_SWITCH to MENU
 PRODUCT_COPY_FILES += \
