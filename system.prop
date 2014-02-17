@@ -18,45 +18,35 @@ ro.media.dec.jpeg.memcap=8000000
 ro.media.enc.jpeg.quality=100
 
 #RIL
-ro.telephony.ril.v3=signalstrength,skipbrokendatacall
+ro.ril.def.agps.mode.TELUS001=1
 ro.ril.oem.ecclist=911
 ro.ril.enable.a52=0
 ro.ril.enable.a53=1
 ro.ril.enable.dtm=0
 ro.ril.gprsclass=10
-ro.ril.hsdpa.category=14
+ro.ril.hsdpa.category=24
 ro.ril.hsupa.category=6
 ro.ril.hsxpa=4
-ro.ril.fast.dormancy.rule=2
-ro.ril.att.feature=1
-ro.ril.radio.svn=3
+ro.ril.fast.dormancy.rule=1
+ro.ril.radio.svn=2
 ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420,27202
 ro.ril.enable.sdr=0
 ro.ril.enable.gea3=1
-ro.ril.enable.ucsq=2
-ro.ril.set.mtusize=1410
-ro.ril.enable.r8fd=0
+ro.ril.enable.amr.wideband=1
+ro.ril.enable.ehplmn.feature=1
+ro.ril.disable.nf=0
+ro.ril.enable.r8fd=1
 ro.ril.disable.cpc=1
-ro.ril.ciq=0
-ro.ril.def.agps.mode=1
-ro.da1.enable=true
-ro.watch.appid=com.sdgtl.watch.eveul_45_jb
+ro.telephony.ipv6_capability=0
 ro.ril.enable.pre_r8fd=1
-ro.ril.fd.pre_r8_tout.scr_off=3
-ro.ril.fd.pre_r8_tout.scr_on=0
-ro.ril.fd.r8_tout.scr_off=0
-ro.ril.fd.r8_tout.scr_on=0
-ro.ril.ltefgi=1577974912
-rild.libpath=/system/lib/libril-qc-qmi-1.so
-# RilLibPath for Ganlite by William_Lai
-rild.libpath.ganlite=/system/lib/librilswitch.so
-rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
-rilswitch.ganlibpath=/system/lib/libganril.so
-
+ro.ril.fd.pre_r8_tout.scr_off=2
+ro.ril.fd.pre_r8_tout.scr_on=3
+ro.ril.fd.r8_tout.scr_off=2
+ro.ril.fd.r8_tout.scr_on=3
+ro.ril.ltefgi=1578105984
+ro.ril.disable.lte.band2_5=1
 rild.libargs=-e wwan0
-ro.sf.lcd_density=320
-ro.hwui.text_cache_width=2048
-ro.hwui.text_cache_height=256
+rild.libpath=/system/lib/libril-qc-qmi-1.so
 
 # For workaround for ro.baseband property. QCT use the property same as radio version to determine the architecture.
 # But we hard code to mdm for DLX.
@@ -85,9 +75,11 @@ modem.power.device=/sys/class/gpio/gpio32/value,0,1
 ro.ril.devicename=/dev/ttyACM1
 modem.powercontrol=disabled
 
-# Wi-Fi
 wifi.interface=wlan0
-wifi.supplicant_scan_interval=60
+wifi.softap.interface=wlan1
+wifi.supplicant_scan_interval=15
+wifi.softap.interface=wlan0
+wifi.softapconcurrent.interface=wl0.1
 
 # NFC
 debug.nfc.fw_download=true
