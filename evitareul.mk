@@ -27,11 +27,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/sbin/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 # Files needed for boot image
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.evitareul.rc:root/init.evitareul.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \
-    $(LOCAL_PATH)/ramdisk/init.scripts.sh:root/init.scripts.sh \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.evitareul.rc:root/ueventd.evitareul.rc \
     $(LOCAL_PATH)/ramdisk/fstab.evitareul:root/fstab.evitareul \
@@ -39,7 +38,7 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/ramdisk/init.ril.rc:root/init.ril.rc
     
 # Camera config files been modified to stop reverse camera
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nvcamera.conf:system/etc/nvcamera.conf \
     $(LOCAL_PATH)/configs/nvcamera_2nd.conf:system/etc/nvcamera_2nd.conf
 
@@ -48,6 +47,7 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
 
+# Hostapad
 PRODUCT_PACKAGES += \
     hostapd_cli \
     calibrator
@@ -85,7 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Tegra 3 spacific overrides
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.tegra.nvmmlite=1 \
-        ro.vendor.extension_library=/system/lib/libhtc-opt2.so \
         tf.enable=y
 
 # We have enough storage space to hold precise GC data
