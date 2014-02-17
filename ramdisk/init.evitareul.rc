@@ -74,12 +74,11 @@ on post-fs-data
 on boot
     # Setup paths used for socket communication with the dhcp daemon(dhcpd)
     mkdir /data/nvcam 0777 system system
+    mkdir /data/misc/wifi 0777 wifi wifi
+    mkdir /data/misc/wifi/sockets 0777 wifi wifi
+    mkdir /data/misc/wifi/hostapd 0777 wifi wifi
     mkdir /data/misc/dhcp 0777 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
-
-    # wifi
-    mkdir /data/misc/wifi 0770 wifi wifi
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi
 
     # bluetooth power up/down interface
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
@@ -221,13 +220,15 @@ on boot
 
     write /proc/sys/net/ipv6/conf/p2p0/disable_ipv6 1
 
-    # Misc modules
-    insmod baseband-xmm-power2.ko
-    insmod baseband_usb_chr.ko
-    insmod raw_ip_net.ko
-    insmod cdc-acm.ko
-    insmod scsi_wait_scan.ko
+    chown system system /sys/class/android_usb/android0/f_rndis/ethaddr
+    chmod 0660 /sys/class/android_usb/android0/f_rndis/ethaddr
 
+# Load modules while booting 
+    insmod /system/lib/modules/bcmdhd.ko
+    insmod /lib/modules/baseband-xmm-power2.ko
+    insmod /lib/modules/baseband_usb_chr.ko
+    insmod /lib/modules/cdc-acm.ko
+    insmod /lib/modules/raw_ip_net.ko
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -e/data/misc/wifi/entropy.bin

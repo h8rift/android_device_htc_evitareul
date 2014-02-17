@@ -23,7 +23,6 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE           := bcmdhd
-#WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/fw_bcm4334.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcm4334_apsta.bin"
@@ -33,6 +32,10 @@ WIFI_DRIVER_FW_PATH_P2P     := "/system/etc/firmware/fw_bcm4334_p2p.bin"
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/evitareul/bluetooth/vnd_evitareul.txt
+
+# GPS
+BOARD_USES_QCOM_GPS := true
+TARGET_PROVIDES_GPS_LOC_API := true
 
 # EGL
 BOARD_EGL_NEEDS_LEGACY_FB := true
@@ -47,7 +50,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2302672896
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Boot/Recovery image settings
-BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
@@ -64,7 +66,7 @@ RECOVERY_FSTAB_VERSION := 2
 
 # SE Linux policies
 BOARD_SEPOLICY_DIRS := \
-    device/htc/tegra3-common/sepolicy
+    device/htc/evitareul/sepolicy
 
 BOARD_SEPOLICY_UNION += \
 	bridge.te \
