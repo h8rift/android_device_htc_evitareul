@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Recovery
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
     $(LOCAL_PATH)/recovery/sbin/detect_key:recovery/root/sbin/detect_key \
     $(LOCAL_PATH)/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
@@ -80,14 +80,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
         dalvik.vm.execution-mode=int:jit \
         dalvik.vm.lockprof.threshold=500 \
         dalvik.vm.dexopt-flags=m=y \
-        persist.sys.usb.config=mtp,adb
+        persist.sys.usb.config=mtp,db
 
 # Tegra 3 spacific overrides
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.tegra.nvmmlite=1 \
         tf.enable=y
 
-# We have enough storage space to hold precise GC data
+# We have enough sorage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
