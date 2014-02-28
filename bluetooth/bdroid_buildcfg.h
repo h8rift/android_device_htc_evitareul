@@ -18,9 +18,5 @@
 #define _BDROID_BUILDCFG_H
 
 #define BTM_DEF_LOCAL_NAME   "HTC One X+"
-#define HCI_BRCM_I2SPCM_IS_DEFAULT_ROLE     0
-#define HCI_BRCM_I2SPCM_SAMPLE_DEFAULT      0
-#define HCI_BRCM_I2SPCM_CLOCK_DEFAULT       1
-#define BTM_WBS_INCLUDED                    TRUE
 
 #endif
