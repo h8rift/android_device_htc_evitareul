@@ -77,6 +77,10 @@ ro.ril.enable.imc.feature=1
 ro.ril.projectname=enrc2b
 ro.ril.stkprof.param=FFFFFFFF7F1D00DFB703021F2200000083000000000040100000000000000000
 
+# Disable LTE
+telephony.lteOnGsmDevice=0
+ro.telephony.default_network=3
+
 #Wi-Fi
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=60
