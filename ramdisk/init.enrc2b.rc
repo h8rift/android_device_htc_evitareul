@@ -59,6 +59,8 @@ on boot
     write /proc/sys/vm/lowmem_reserve_ratio 16\ 16
     write /proc/sys/vm/min_free_kbytes 4096
 
+    chmod 0644 /proc/cmdline
+
     # Setup paths used for socket communication with the dhcp daemon(dhcpd)
     mkdir /data/nvcam 0777 system system
     mkdir /data/misc/wifi 0777 wifi wifi
