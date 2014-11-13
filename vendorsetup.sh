@@ -21,7 +21,4 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo cm_evitareul-userdebug
-<<<<<<< HEAD
-=======
 add_lunch_combo cm_evitareul-eng
->>>>>>> 6d22537... evitareul: start with enrc2b base - b540604

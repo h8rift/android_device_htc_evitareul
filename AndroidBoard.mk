@@ -21,8 +21,4 @@ include $(CLEAR_VARS)
 ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
 # include the non-open-source counterpart to this file
-<<<<<<< HEAD
--include vendor/htc/evitareul/AndroidBoardVendor.mk
-=======
 -include vendor/htc/evitareul/AndroidBoardVendor.mk 
->>>>>>> 6d22537... evitareul: start with enrc2b base - b540604

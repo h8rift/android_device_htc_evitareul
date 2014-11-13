@@ -24,7 +24,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 # HTC ril compatability
 TARGET_PROVIDES_LIBRIL := device/htc/evitareul/proprietary/lib/libhtc-ril.so
 
-# Kernel / Ramdisk
+# Ramdisk 
 TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -45,8 +45,8 @@ TARGET_KERNEL_CONFIG := cyanogenmod_evitareul_defconfig
 BOARD_EGL_NEEDS_LEGACY_FB := true
 
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/htc/evitareul/ramdisk/fstab.evitareul
-RECOVERY_FSTAB_VERSION := 2 
+TARGET_RECOVERY_FSTAB := device/htc/evitareul/rootdir/etc/fstab.evitareul
+RECOVERY_FSTAB_VERSION := 2
 
 # SE Linux policies
 BOARD_SEPOLICY_DIRS := \

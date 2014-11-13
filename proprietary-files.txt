@@ -59,8 +59,8 @@ lib/hw/gralloc.tegra.so
 lib/hw/hwcomposer.tegra.so
 lib/hw/keystore.default.so
 lib/hw/local_time.default.so
-lib/hw/nfc.enrc2b.so
-lib/hw/sensors.enrc2b.so
+lib/hw/nfc.evitareul.so
+lib/hw/sensors.evitareul.so
 lib/hw/vendor-camera.tegra.so
 lib/libardrv_dynamic.so
 lib/libasound.so

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Device configuration for the HTC ONEX+ AT&T (aka Evitareul)
-=======
-Device configuration for the HTC ONEX+ (aka evitareul)
->>>>>>> 6d22537... evitareul: start with enrc2b base - b540604
+Device configuration for the HTC ONE X+ (aka evitareul)
 
 Copyright (C) 2012 Robert Shannon
 
