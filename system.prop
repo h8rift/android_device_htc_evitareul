@@ -1,5 +1,5 @@
 #
-# system.prop for enrc2b
+# system.prop for evitareul
 #
 ro.opengles.version = 131072
 #
@@ -74,7 +74,7 @@ ro.ril.imc.uia2=0
 ro.ril.edpcch.pwr.boost=1
 ro.ril.hspa.mac.ehs=1
 ro.ril.enable.imc.feature=1
-ro.ril.projectname=enrc2b
+ro.ril.projectname=evitareul
 ro.ril.stkprof.param=FFFFFFFF7F1D00DFB703021F2200000083000000000040100000000000000000
 
 # Disable LTE

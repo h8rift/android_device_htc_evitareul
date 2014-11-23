@@ -1,0 +1,42 @@
+on boot
+    start choice_fn
+    start htcbatt
+    start chargeled
+
+on property:sys.usb.config=none
+    stop adbd
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/bDeviceClass 0
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=adb
+    write /sys/devices/platform/android_usb/usb_function_switch 3
+    write /sys/class/android_usb/android0/f_adb/on 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mass_storage,adb
+    write /sys/devices/platform/android_usb/usb_function_switch 3
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=rndis,mtp,adb
+    write /sys/devices/platform/android_usb/usb_function_switch 135
+    setprop sys.usb.state ${sys.usb.config}
+
+service choice_fn /sbin/choice_fn
+    disabled
+    oneshot
+
+service htcbatt /sbin/htcbatt
+    disabled
+    oneshot
+
+service offmode_charging /sbin/offmode_charging
+    disabled
+    oneshot
+
+service detect_key /sbin/detect_key
+    disabled
+    oneshot
+
+service chargeled /sbin/chargeled
+    disabled

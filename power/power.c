@@ -20,7 +20,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-#define LOG_TAG "enrc2b PowerHAL"
+#define LOG_TAG "evitareul PowerHAL"
 #include <utils/Log.h>
 
 #include <hardware/hardware.h>
@@ -99,52 +99,52 @@ static int get_scaling_governor(char governor[], int size) {
 
     return 0;
 }
-static void enrc2b_power_init(struct power_module *module)
+static void evitareul_power_init(struct power_module *module)
 {
 	char governor[80];
 
 	if(get_scaling_governor(governor, sizeof(governor))!=0)
 		return;
 	
-    ALOGI("enrc2b_power_init %s", governor);
+    ALOGI("evitareul_power_init %s", governor);
 }
 
-static void enrc2b_power_set_interactive(struct power_module *module, int on)
+static void evitareul_power_set_interactive(struct power_module *module, int on)
 {
 	char governor[80];
 		
 	if(get_scaling_governor(governor, sizeof(governor))!=0)
 		return;
 		
-	ALOGI("enrc2b_power_set_interactive %s %d", governor, on);
+	ALOGI("evitareul_power_set_interactive %s %d", governor, on);
     
     if (strncmp(governor, INTERACTIVE_GOVERNOR, strlen(INTERACTIVE_GOVERNOR)) == 0){
         sysfs_write(INTERACTIVE_INPUT_BOOST, on ? "1" : "0");
     }
 }
 
-static void enrc2b_power_hint(struct power_module *module, power_hint_t hint,
+static void evitareul_power_hint(struct power_module *module, power_hint_t hint,
                             void *data)
 {
     char buf[80];
     int len;
 
-    //ALOGI("enrc2b_power_hint :%d", hint);
+    //ALOGI("evitareul_power_hint :%d", hint);
     switch (hint) {
     case POWER_HINT_VSYNC:
-    	//ALOGI("enrc2b_power_hint POWER_HINT_VSYNC");
+    	//ALOGI("evitareul_power_hint POWER_HINT_VSYNC");
         break;
     case POWER_HINT_INTERACTION:
-        //ALOGI("enrc2b_power_hint POWER_HINT_INTERACTION");
+        //ALOGI("evitareul_power_hint POWER_HINT_INTERACTION");
         break;
     case POWER_HINT_VIDEO_ENCODE:
-        //ALOGI("enrc2b_power_hint POWER_HINT_VIDEO_ENCODE");
+        //ALOGI("evitareul_power_hint POWER_HINT_VIDEO_ENCODE");
         break;
     case POWER_HINT_CPU_BOOST:
-        //ALOGI("enrc2b_power_hint POWER_HINT_CPU_BOOST");
+        //ALOGI("evitareul_power_hint POWER_HINT_CPU_BOOST");
         break;
     default:
-        //ALOGI("enrc2b_power_hint unknown:%d", hint);
+        //ALOGI("evitareul_power_hint unknown:%d", hint);
         break;
     }
 }
@@ -159,12 +159,12 @@ struct power_module HAL_MODULE_INFO_SYM = {
         .module_api_version = POWER_MODULE_API_VERSION_0_2,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = POWER_HARDWARE_MODULE_ID,
-        .name = "enrc2b Power HAL",
+        .name = "evitareul Power HAL",
         .author = "max.weninger@gmail.com",
         .methods = &power_module_methods,
     },
 
-    .init = enrc2b_power_init,
-    .setInteractive = enrc2b_power_set_interactive,
-    .powerHint = enrc2b_power_hint,
+    .init = evitareul_power_init,
+    .setInteractive = evitareul_power_set_interactive,
+    .powerHint = evitareul_power_hint,
 };

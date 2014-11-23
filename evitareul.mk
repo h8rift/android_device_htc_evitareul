@@ -27,13 +27,13 @@ PRODUCT_COPY_FILES += \
 
 # Files needed for boot image
 PRODUCT_COPY_FILES := \
-    $(LOCAL_PATH)/ramdisk/init.enrc2b.rc:root/init.enrc2b.rc \
+    $(LOCAL_PATH)/ramdisk/init.evitareul.rc:root/init.evitareul.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \
     $(LOCAL_PATH)/ramdisk/init.scripts.sh:root/init.scripts.sh \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
-    $(LOCAL_PATH)/ramdisk/ueventd.enrc2b.rc:root/ueventd.enrc2b.rc \
-    $(LOCAL_PATH)/ramdisk/fstab.enrc2b:root/fstab.enrc2b
+    $(LOCAL_PATH)/ramdisk/ueventd.evitareul.rc:root/ueventd.evitareul.rc \
+    $(LOCAL_PATH)/ramdisk/fstab.evitareul:root/fstab.evitareul
 
 # Prebuilt GPS/Camera/Wi-Fi configs
 PRODUCT_COPY_FILES += \
@@ -95,9 +95,9 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-PRODUCT_LOCALES += en_GB xhdpi
+PRODUCT_LOCALES += en_US xhdpi
 
-$(call inherit-product, vendor/htc/enrc2b/enrc2b-vendor.mk)
+$(call inherit-product, vendor/htc/evitareul/evitareul-vendor.mk)
 
 # common tegra3-HOX+ configs
 $(call inherit-product, device/htc/tegra3-common/tegra3.mk)

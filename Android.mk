@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),enrc2b)
+ifeq ($(TARGET_DEVICE),evitareul)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif

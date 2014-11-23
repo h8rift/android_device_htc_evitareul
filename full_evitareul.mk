@@ -20,13 +20,13 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/htc/enrc2b/enrc2b.mk)
+$(call inherit-product, device/htc/evitareul/evitareul.mk)
 # This is where we'd set a backup provider if we had one
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := full_enrc2b
-PRODUCT_DEVICE := enrc2b
+PRODUCT_NAME := full_evitareul
+PRODUCT_DEVICE := evitareul
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := Full AOSP on enrc2b
+PRODUCT_MODEL := Full AOSP on evitareul

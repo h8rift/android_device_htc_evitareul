@@ -1,6 +1,6 @@
 #!/bin/sh
 VENDOR=htc
-DEVICE=enrc2b
+DEVICE=evitareul
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

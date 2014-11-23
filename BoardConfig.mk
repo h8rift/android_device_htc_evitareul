@@ -31,11 +31,11 @@ WIFI_DRIVER_FW_PATH_P2P     := "/system/etc/firmware/fw_bcm4334_p2p.bin"
 
 # BT
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/htc/enrc2b/bluetooth/vnd_enrc2b.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/enrc2b/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/evitareul/bluetooth/vnd_evitareul.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 
 # HTC ril compatability
-TARGET_PROVIDES_LIBRIL := device/htc/enrc2b/proprietary/lib/libhtc-ril.so
+TARGET_PROVIDES_LIBRIL := device/htc/evitareul/proprietary/lib/libhtc-ril.so
 
 # Kernel / Ramdisk
 TARGET_PROVIDES_INIT_TARGET_RC := true
@@ -52,17 +52,17 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # Try to build the kernel
-TARGET_KERNEL_SOURCE := kernel/htc/enrc2b
-TARGET_KERNEL_CONFIG := cyanogenmod_enrc2b_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/evitareul
+TARGET_KERNEL_CONFIG := cyanogenmod_evitareul_defconfig
 
 # dont build docs
 DISABLE_DROIDDOC := true
 
 # Recovery
-TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/enrc2b/recovery/recovery_kernel
+TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/evitareul/recovery/recovery_kernel
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/htc/enrc2b/ramdisk/fstab.enrc2b
+TARGET_RECOVERY_FSTAB := device/htc/evitareul/ramdisk/fstab.evitareul
 RECOVERY_FSTAB_VERSION := 2 
 
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true

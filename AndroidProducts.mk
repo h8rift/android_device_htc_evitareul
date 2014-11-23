@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_enrc2b.mk
+    $(LOCAL_DIR)/full_evitareul.mk

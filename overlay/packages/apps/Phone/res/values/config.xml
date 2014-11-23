@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<!-- enrc2b-specific phone app resources. -->
+<!-- evitareul-specific phone app resources. -->
 <resources>
     <!-- Determine whether calls to mute the microphone in PhoneUtils
                   are routed through the android.media.AudioManager class (true) or through

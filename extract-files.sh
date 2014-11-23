@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE=../../../vendor/htc/enrc2b/proprietary
+BASE=../../../vendor/htc/evitareul/proprietary
 rm -rf $BASE/*
 
 for FILE in `cat proprietary-files.txt`; do
