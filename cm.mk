@@ -14,6 +14,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
+# Inherit device configuration
 $(call inherit-product, device/htc/evitareul/full_evitareul.mk)
 
 ## Device identifier. This must come after all inclusions

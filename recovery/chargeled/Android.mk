@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2008 The Android Open Source Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,18 @@
 # limitations under the License.
 #
 
-# This file is executed by build/envsetup.sh, and can use anything
-# defined in envsetup.sh.
-#
-# In particular, you can add lunch options with the add_lunch_combo
-# function: add_lunch_combo generic-eng
+LOCAL_PATH := $(call my-dir)
+include $(CLEAR_VARS)
 
-add_lunch_combo cm_evitareul-userdebug
-<<<<<<< HEAD
-=======
-add_lunch_combo cm_evitareul-eng
->>>>>>> 6d22537... evitareul: start with enrc2b base - b540604
+LOCAL_SRC_FILES := chargeled.c
+
+LOCAL_CFLAGS += -Wall
+
+LOCAL_STATIC_LIBRARIES := libc liblog libcutils
+LOCAL_FORCE_STATIC_EXECUTABLE := true
+
+LOCAL_MODULE := chargeled
+LOCAL_MODULE_TAGS := optional eng
+LOCAL_MODULE_CLASS := RECOVERY_EXECUTABLES
+LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
+include $(BUILD_EXECUTABLE)

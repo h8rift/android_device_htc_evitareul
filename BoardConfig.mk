@@ -16,26 +16,13 @@
 # inherit from tegra3-common
 -include device/htc/tegra3-common/BoardConfigCommon.mk
 
-# Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-WPA_SUPPLICANT_VERSION      := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER        := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
-BOARD_WLAN_DEVICE           := bcmdhd
-#WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/fw_bcm4334.bin"
-WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcm4334_apsta.bin"
-WIFI_DRIVER_FW_PATH_P2P     := "/system/etc/firmware/fw_bcm4334_p2p.bin"
-
 # BT
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/evitareul/bluetooth/vnd_evitareul.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 
-# EGL
-BOARD_EGL_NEEDS_LEGACY_FB := true
+# HTC ril compatability
+TARGET_PROVIDES_LIBRIL := device/htc/evitareul/proprietary/lib/libhtc-ril.so
 
 # Kernel / Ramdisk
 TARGET_PROVIDES_INIT_TARGET_RC := true
@@ -55,8 +42,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/htc/evitareul
 TARGET_KERNEL_CONFIG := cyanogenmod_evitareul_defconfig
 
-# dont build docs
-DISABLE_DROIDDOC := true
+BOARD_EGL_NEEDS_LEGACY_FB := true
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := device/htc/evitareul/ramdisk/fstab.evitareul
@@ -86,3 +72,16 @@ BOARD_SEPOLICY_UNION += \
 	ueventd.te \
 	wpa_supplicant.te
 	
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+
+# WiFi related defines
+BOARD_WLAN_DEVICE                  := bcmdhd
+BOARD_WPA_SUPPLICANT_DRIVER        := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB   := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_DRIVER               := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB          := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_FW_PATH_PARAM          := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA            := "/system/etc/firmware/fw_bcm4334.bin"
+WIFI_DRIVER_FW_PATH_AP             := "/system/etc/firmware/fw_bcm4334_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P            := "/system/etc/firmware/fw_bcm4334_p2p.bin"
+WPA_SUPPLICANT_VERSION             := VER_0_8_X
