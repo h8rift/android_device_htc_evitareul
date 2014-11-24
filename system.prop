@@ -5,100 +5,31 @@ ro.opengles.version = 131072
 
 # Common display settings
 ro.sf.lcd_density=320
-ro.hwui.text_cache_width=2048
-ro.hwui.text_cache_height=256
 
-# Performance and battery tweaks
-ro.ril.disable.power.collapse=1
-debug.performance.tuning=1
-video.accelerate.hw=1
-debug.sf.hw=1
-persist.sys.ui.hw=true
-ro.media.dec.jpeg.memcap=8000000
-ro.media.enc.jpeg.quality=100
-
-#RIL
-ro.ril.def.agps.mode.TELUS001=1
-ro.ril.oem.ecclist=911
-ro.ril.enable.a52=0
-ro.ril.enable.a53=1
-ro.ril.enable.dtm=0
-ro.ril.gprsclass=10
-ro.ril.hsdpa.category=24
-ro.ril.hsupa.category=6
-ro.ril.hsxpa=4
-ro.ril.fast.dormancy.rule=1
-ro.ril.radio.svn=2
-ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420,27202
-ro.ril.enable.sdr=0
-ro.ril.enable.gea3=1
-ro.ril.enable.amr.wideband=1
-ro.ril.enable.ehplmn.feature=1
-ro.ril.disable.nf=0
-ro.ril.enable.r8fd=1
-ro.ril.disable.cpc=1
-ro.telephony.ipv6_capability=0
-ro.ril.enable.pre_r8fd=1
-ro.ril.fd.pre_r8_tout.scr_off=2
-ro.ril.fd.pre_r8_tout.scr_on=3
-ro.ril.fd.r8_tout.scr_off=2
-ro.ril.fd.r8_tout.scr_on=3
-ro.ril.ltefgi=1578105984
-ro.ril.disable.lte.band2_5=1
-rild.libargs=-e wwan0
+# RIL properties
+mobiledata.interfaces=rmnet0,rmnet1
+ro.telephony.default_network=9
+DEVICE_PROVISIONED=1
+telephony.lteOnGsmDevice=1
 rild.libpath=/system/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+ro.ril.fast.dormancy.rule=2
 
-# For workaround for ro.baseband property. QCT use the property same as radio version to determine the architecture.
 # But we hard code to mdm for DLX.
 ro.baseband.arch = mdm
 
-# RIL, for IMC modem feature
-ro.ril.enable.imc.feature=1
-ro.ril.projectname=evitareul
-
-# RIL, parameters for register BLUE stk feature to modem
-ro.ril.stkprof.param=FFFFFFFF7F0000DF9703021F2200000000000000000040100000000000000000
-
-# RIL: enable snapshot
-persist.radio.snapshot_enabled = 1
-persist.radio.snapshot_timer = 22
-
-# Icera fild
-modem.fild.rootdir=/data/rfs
-modem.fild.blocksize=65528
-modem.fild.baudrate=3500000
-modem.fild.hif=0
-modem.fild.coredump=enabled
-modem.fild.coredumpdir=/data/rfs/data/debug
-modem.power.device=/sys/class/gpio/gpio32/value,0,1
-ro.ril.devicename=/dev/ttyACM1
-modem.powercontrol=disabled
-
-wifi.interface=wlan0
-wifi.softap.interface=wlan1
-wifi.supplicant_scan_interval=15
-wifi.softap.interface=wlan0
-wifi.softapconcurrent.interface=wl0.1
+# ro.ril.devicename=/dev/ttyACM1
 
 # NFC
 debug.nfc.fw_download=true
+debug.nfc.fw_boot_download=false
 debug.nfc.se=true
-
-# For usb storage
-ro.usb_host = 1
-
-# Support HW reset dialog
-ro.product.hwreset = 1
-ro.product.hwreset.timer1 = 5
-ro.product.hwreset.timer2 = 8
+ro.nfc.port=I2C
 
 # HDMI
 ro.hdmi.enable=true
 # temporary fix for HDMI output, for videos it works now in correct landscape with this set
 persist.demo.hdmirotation=portrait
-
-# fw.power_user_switcher=true
-service.htc_ebdlogd.enable=1
 
 # Enable legacy screenshot code for older Tegra 3 EGL libs
 ro.bq.gpu_to_cpu_unsupported=1
