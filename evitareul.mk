@@ -17,16 +17,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Recovery
+#PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
+    $(LOCAL_PATH)/recovery/sbin/detect_key:recovery/root/sbin/detect_key \
+    $(LOCAL_PATH)/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
+    $(LOCAL_PATH)/recovery/sbin/power_test:recovery/root/sbin/power_test \
+    $(LOCAL_PATH)/recovery/sbin/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+
 # Files needed for boot image
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.evitareul.rc:root/init.evitareul.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.usb.rc:root/init.usb.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.trace.rc:root/init.trace.rc \
-    $(LOCAL_PATH)/rootdir/etc/ueventd.rc:root/ueventd.rc \
     $(LOCAL_PATH)/rootdir/etc/ueventd.evitareul.rc:root/ueventd.evitareul.rc \
     $(LOCAL_PATH)/rootdir/etc/fstab.evitareul:root/fstab.evitareul \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.firmware_links.sh:root/init.qcom.firmware_links.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.ril.rc:root/init.ril.rc
+    $(LOCAL_PATH)/rootdir/etc/init.evitareul.usb.rc:root/init.evitareul.usb.rc
     
 # Camera config files been modified to stop reverse camera
 PRODUCT_COPY_FILES += \
