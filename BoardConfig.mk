@@ -21,16 +21,15 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/evitareul/bluetooth/vnd_evitareul.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/htc/evitareul/bluetooth
 
-# HTC ril compatability
-TARGET_PROVIDES_LIBRIL := device/htc/evitareul/proprietary/lib/libhtc-ril.so
+# TARGET_PROVIDES_LIBRIL := device/htc/evitareul/proprietary/lib/libhtc-ril.so
 
 # Ramdisk 
 TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1342177280
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 2302672896 
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 60129542144
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Boot/Recovery image settings
@@ -42,36 +41,12 @@ BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/htc/evitareul
 TARGET_KERNEL_CONFIG := cyanogenmod_evitareul_defconfig
 
-BOARD_EGL_NEEDS_LEGACY_FB := true
+# BOARD_EGL_NEEDS_LEGACY_FB := true
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := device/htc/evitareul/rootdir/etc/fstab.evitareul
 RECOVERY_FSTAB_VERSION := 2
 
-# SE Linux policies
-BOARD_SEPOLICY_DIRS := \
-    device/htc/tegra3-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-	bridge.te \
-	device.te \
-	dhcp.te \
-	domain.te \
-	file.te \
-	file_contexts \
-	init.te \
-	kickstart.te \
-	netmgrd.te \
-	property.te \
-	property_contexts \
-	qmux.te \
-	restorecon.te \
-	rild.te \
-	system.te \
-	te_macros \
-	ueventd.te \
-	wpa_supplicant.te
-	
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 # WiFi related defines
