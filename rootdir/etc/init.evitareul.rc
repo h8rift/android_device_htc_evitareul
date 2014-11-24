@@ -31,10 +31,10 @@ on early-init
     # create mountpoints
     symlink /storage/usb /mnt/usb
 
-        #Sophia
-        mkdir /firmware 0771 system system
-        mkdir /firmware/mdm 0771 system system
-        #Sophia
+    #Sophia
+    mkdir /firmware 0771 system system
+    mkdir /firmware/mdm 0771 system system
+    #Sophia
 
 on fs
     mkdir /rca 0775 radio radio
@@ -47,19 +47,18 @@ on fs
     insmod /system/lib/modules/moc_crypto.ko
     insmod /system/lib/modules/dm-crypt.ko
 
-
     chmod 0660 /rca/calib.nvm
     chmod 0660 /rca
     chmod 0660 /rfs
     setprop ro.crypto.fuse_sdcard true
 
-        #Sophia
-        mount vfat /dev/block/platform/sdhci-tegra.3/by-name/MDM  /firmware/mdm ro shortname=lower
-        exec /system/bin/sh /init.qcom.firmware_links.sh /firmware/mdm/image /firmware "*.mbn *.img"
+    #Sophia
+    mount vfat /dev/block/platform/sdhci-tegra.3/by-name/MDM  /firmware/mdm ro shortname=lower
+    exec /system/bin/sh /init.qcom.firmware_links.sh /firmware/mdm/image /firmware "*.mbn *.img"
 
-        mkdir /data/qcks 0770 system system
-        mkdir /data/efs 0771 system system
-        #Sophia
+    mkdir /data/qcks 0770 system system
+    mkdir /data/efs 0771 system system
+    #Sophia
 
 on post-fs-data
     # we will remap this as /storage/sdcard0 with the sdcard fuse tool
@@ -69,20 +68,17 @@ on post-fs-data
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 
-
 on boot
     ## Android 4.3+ Needs this
     chmod 0644 /proc/cmdline
 
-# radio
+# QMUX Sockets 
     mkdir /dev/socket/qmux_radio 0770 radio radio
     chmod 2770 /dev/socket/qmux_radio
     mkdir /dev/socket/qmux_audio 0770 audio audio
     chmod 2770 /dev/socket/qmux_audio
     mkdir /dev/socket/qmux_bluetooth 0770 bluetooth bluetooth
     chmod 2770 /dev/socket/qmux_bluetooth
-    
-# GPS
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
@@ -117,12 +113,6 @@ on boot
     setprop net.tcp.buffersize.hsupa   4094,87380,262144,4096,16384,262144
     setprop net.tcp.buffersize.hspap   4094,87380,1220608,4096,16384,1220608
     setprop net.tcp.buffersize.evdo    4094,87380,262144,4096,16384,262144
-
-    service netd /system/bin/netd
-    class main
-    socket netd stream 0660 root system
-    socket dnsproxyd stream 0660 root inet
-    socket mdns stream 0660 root system
 
     # Setup paths used for socket communication with the dhcp daemon(dhcpd)
     mkdir /data/nvcam 0777 system system
@@ -233,17 +223,6 @@ on boot
     write /sys/module/cpu_tegra3/parameters/auto_hotplug 1
     write /sys/module/cpuidle/parameters/lp2_in_idle 1
 
-    # + SSD_RIL : Enlarge TCP window size for ATT HSDPA Cat 14
-    setprop net.tcp.buffersize.lte     524288,1048576,3461120,262144,524288,1048576
-    setprop net.tcp.buffersize.hspap   4096,174760,1572864,4096,16384,110208
-    setprop net.tcp.buffersize.hspa    4096,174760,1572864,4096,16384,110208
-    setprop net.tcp.buffersize.hsupa   4096,174760,1572864,4096,16384,110208
-    setprop net.tcp.buffersize.hsdpa   4096,174760,1572864,4096,16384,110208
-    setprop net.tcp.buffersize.umts    4096,174760,1572864,4096,16384,110208
-    setprop net.tcp.buffersize.edge    4096,174760,1572864,4096,16384,35040
-    setprop net.tcp.buffersize.gprs    4096,174760,1572864,4096,8760,11680
-# - SSD_RIL : Enlarge TCP window size for ATT HSDPA Cat 14
-
     # Discretix DRM change start
     mkdir /data/DxDrm
     mkdir /data/DxDrm/fuse
@@ -252,10 +231,6 @@ on boot
     # Discretix DRM change end
 
 #++SSD_GPS
-    mkdir /dev/socket/qmux_gps 0770 gps gps
-    # RIL team Damon request to 0770 to pass ATT test
-    # chmod 2770 /dev/socket/qmux_gps
-
     #Create directories for Location services
     mkdir /data/misc/location 0770 gps gps
     mkdir /data/misc/location/mq 0770 gps gps
@@ -347,7 +322,6 @@ service hostapd_bin /system/bin/logwrapper /system/bin/hostapd -dd /data/misc/wi
 
 service nvm-server /system/bin/nvm_server
     class core
-    cgroup bg
     socket nvm-ctl stream 660 radio radio
     user root
     group root
@@ -449,21 +423,13 @@ service setup_fs /system/bin/setup_fs \
     group root
     oneshot
 
-service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7
-    user root
-    cgroup bg
-    disabled
-    oneshot
-    ioprio idle 0
-
-service htc_ebdlogd_rel /system/bin/htc_ebdlogd -s -k
-    user root
-    cgroup bg
-    disabled
-    oneshot
-    ioprio idle 0
-
 #++SSD_RIL
+
+service netd /system/bin/netd
+    class main
+    socket netd stream 0660 root system
+    socket dnsproxyd stream 0660 root inet
+    socket mdns stream 0660 root system
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
